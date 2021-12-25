@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "alkimicraft:block/loamy_sand"
+      },
+      {
+        "model": "alkimicraft:block/loamy_sand",
+        "y": 90
+      },
+      {
+        "model": "alkimicraft:block/loamy_sand",
+        "y": 180
+      },
+      {
+        "model": "alkimicraft:block/loamy_sand",
+        "y": 270
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "alkimicraft:block/just_planted_plant_0"
+    },
+    "age=1": {
+      "model": "alkimicraft:block/sea_buckthorn_1"
+    },
+    "age=2": {
+      "model": "alkimicraft:block/sea_buckthorn_2"
+    },
+    "age=3": {
+      "model": "alkimicraft:block/sea_buckthorn_3"
+    },
+    "age=4": {
+      "model": "alkimicraft:block/sea_buckthorn_3"
+    },
+    "age=5": {
+      "model": "alkimicraft:block/sea_buckthorn_4"
+    }
+  }
+}

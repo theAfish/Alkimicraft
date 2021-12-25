@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values":
+  [
+    "alkimicraft:toxic_sewage",
+    "alkimicraft:toxic_sewage_flow",
+    "alkimicraft:salty_water",
+    "alkimicraft:salty_water_flow",
+    "alkimicraft:fresh_water",
+    "alkimicraft:fresh_water_flow"
+  ]
+}

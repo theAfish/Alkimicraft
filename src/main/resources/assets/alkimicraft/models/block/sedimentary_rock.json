@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "alkimicraft:block/sedimentary_rock_top",
+    "down": "alkimicraft:block/sedimentary_rock_top",
+    "up": "alkimicraft:block/sedimentary_rock_top",
+    "north": "alkimicraft:block/sedimentary_rock_side",
+    "east": "alkimicraft:block/sedimentary_rock_side",
+    "south": "alkimicraft:block/sedimentary_rock_side",
+    "west": "alkimicraft:block/sedimentary_rock_side"
+  }
+}

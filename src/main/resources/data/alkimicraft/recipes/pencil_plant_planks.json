@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "alkimicraft:pencil_plant_log"
+    }
+  ],
+  "result": {
+    "item": "alkimicraft:pencil_plant_planks",
+    "count": 1
+  }
+}

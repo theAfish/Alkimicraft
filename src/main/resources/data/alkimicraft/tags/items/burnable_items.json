@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values":[
+    "alkimicraft:desert_poplar_leaves",
+    "alkimicraft:desert_poplar_log",
+    "#minecraft:leaves",
+    "#minecraft:logs",
+    "#minecraft:planks",
+    "minecraft:stick",
+    "minecraft:oak_stairs"
+  ]
+}

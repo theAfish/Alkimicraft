@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "alkimicraft:desert_poplar_logs"
+    }
+  ],
+  "result": {
+    "item": "alkimicraft:desert_poplar_planks",
+    "count": 4
+  }
+}

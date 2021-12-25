@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "alkimicraft:block/desert_poplar_leaves"
+  }
+}

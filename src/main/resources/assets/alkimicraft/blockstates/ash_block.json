@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "alkimicraft:block/ash_block"
+      },
+      {
+        "model": "alkimicraft:block/ash_block",
+        "y": 90
+      },
+      {
+        "model": "alkimicraft:block/ash_block",
+        "y": 180
+      },
+      {
+        "model": "alkimicraft:block/ash_block",
+        "y": 270
+      }
+    ]
+  }
+}

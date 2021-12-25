@@ -1,0 +1,14 @@
+{
+  "itemGroup.alkimicraft.item_group": "AlkimiCraft",
+
+  "item.alkimicraft.test_item": "Test Item",
+  "item.alkimicraft.test_item.line1": "This is a test item",
+
+  "block.alkimicraft.test_plant": "Test Plant",
+
+  "item.alkimicraft.test_seeds": "Test Seeds",
+  "item.alkimicraft.test_seeds.line1": "Plant on farmland to grow Test Plants",
+
+  "item.alkimicraft.desert_poplar_seeds": "Desert Poplar Seeds",
+  "item.alkimicraft.desert_poplar_seeds.line1": "Plant on loamy sand"
+}

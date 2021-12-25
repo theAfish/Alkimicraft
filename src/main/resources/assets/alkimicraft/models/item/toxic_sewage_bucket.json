@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "alkimicraft:item/toxic_sewage_bucket"
+  }
+}

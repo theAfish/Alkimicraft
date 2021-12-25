@@ -1,0 +1,46 @@
+{
+  "depth": -1.0,
+  "scale": -0.2,
+  "precipitation": "rain",
+  "category": "none",
+  "temperature": 0.5,
+  "temperature_modifier": "none",
+  "downfall": 0.5,
+  "player_spawn_friendly": false,
+  "creature_spawn_friendly": 0.2,
+  "effects": {
+    "fog_color": 14150143,
+    "sky_color": 2196223,
+    "water_color": 2203115,
+    "water_fog_color": 2184897
+  },
+  "surface_builder": "alkimicraft:salty_ocean",
+  "carvers": {
+    "air": [
+      "minecraft:cave"
+    ]
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
+    ],
+    [],
+    [],
+    [],
+    []
+  ],
+  "starts": [],
+  "spawners": {
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {}
+}

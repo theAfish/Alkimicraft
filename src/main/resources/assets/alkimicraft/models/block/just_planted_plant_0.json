@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "alkimicraft:block/just_planted_plant_0"
+  }
+}

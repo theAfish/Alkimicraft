@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "alkimicraft:block/artemisia_arenaria_3"
+  }
+}

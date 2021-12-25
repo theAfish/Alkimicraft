@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "alkimicraft:block/packed_sticks_top",
+    "side": "alkimicraft:block/packed_sticks"
+  }
+}

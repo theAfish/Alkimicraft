@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "alkimicraft:block/barren_loam"
+      },
+      {
+        "model": "alkimicraft:block/barren_loam",
+        "y": 90
+      },
+      {
+        "model": "alkimicraft:block/barren_loam",
+        "y": 180
+      },
+      {
+        "model": "alkimicraft:block/barren_loam",
+        "y": 270
+      }
+    ]
+  }
+}

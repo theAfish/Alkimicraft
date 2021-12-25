@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/tinted_cross",
+  "textures": {
+    "cross": "alkimicraft:block/iron_root_grass_2"
+  }
+}

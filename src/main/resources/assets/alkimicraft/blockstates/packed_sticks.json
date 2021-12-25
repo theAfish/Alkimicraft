@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "alkimicraft:block/packed_sticks",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "alkimicraft:block/packed_sticks"
+    },
+    "axis=z": {
+      "model": "alkimicraft:block/packed_sticks",
+      "x": 90
+    }
+  }
+}

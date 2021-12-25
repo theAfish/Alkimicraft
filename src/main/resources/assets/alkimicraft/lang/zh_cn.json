@@ -1,0 +1,11 @@
+{
+  "itemGroup.alkimicraft.item_group": "炼造工艺",
+
+  "item.alkimicraft.test_item": "测试物品",
+  "item.alkimicraft.test_item.line1": "这是一个测试物品",
+
+  "block.alkimicraft.test_plant": "测试作物",
+
+  "item.alkimicraft.desert_poplar_seeds": "胡杨种子",
+  "item.alkimicraft.desert_poplar_seeds.line1": "种植于壤质沙土上"
+}

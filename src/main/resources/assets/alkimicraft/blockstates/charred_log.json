@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "alkimicraft:block/charred_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "alkimicraft:block/charred_log"
+    },
+    "axis=z": {
+      "model": "alkimicraft:block/charred_log",
+      "x": 90
+    }
+  }
+}
