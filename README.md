@@ -1,9 +1,6 @@
-# Fabric Example Mod
+# Alkimicraft - Project Oasis
 
-## Setup
+## Intro
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+This is a Homemade Mod for Minecraft 1.18+ based on Fabric
 
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
