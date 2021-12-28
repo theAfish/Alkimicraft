@@ -6,7 +6,6 @@
   "mixins": [
     "BlockMixin",
     "BucketItemMixin",
-    "CauldronBehaviorMixin",
     "FenceMixin",
     "FlowableFluidMixin",
     "MixinBlockEntity"

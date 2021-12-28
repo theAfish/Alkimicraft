@@ -11,7 +11,10 @@ import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.dimension.v1.FabricDimensions;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.LeveledCauldronBlock;
+import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.command.CommandException;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityGroup;
@@ -22,6 +25,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.LiteralText;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -39,6 +43,7 @@ import net.minecraft.world.dimension.DimensionType;
 
 import java.lang.module.Configuration;
 
+import static net.minecraft.block.cauldron.CauldronBehavior.FILL_WITH_WATER;
 import static net.minecraft.server.command.CommandManager.literal;
 
 
@@ -54,6 +59,10 @@ public class AlkimiCraft implements ModInitializer {
 	private static RegistryKey<World> WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, DIMENSION_KEY.getValue());
 	private static final RegistryKey<DimensionType> DIMENSION_TYPE_KEY = RegistryKey.of(Registry.DIMENSION_TYPE_KEY, new Identifier(MOD_ID, "the_dry"));
 
+	private static boolean test(BlockState statex) {
+		return statex.get(LeveledCauldronBlock.LEVEL) == 3;
+	}
+
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
@@ -66,6 +75,8 @@ public class AlkimiCraft implements ModInitializer {
 		FluidInit.init();
 		EntityInit.init();
 		TagsInit.init();
+
+		initialiseCauldron();
 
 		// Dimensions
 		Registry.register(Registry.CHUNK_GENERATOR, new Identifier(MOD_ID, "the_dry"), DryChunkGenerator.CODEC);
@@ -126,6 +137,16 @@ public class AlkimiCraft implements ModInitializer {
 
 		return 1;
 	}
+
+
+	public static void initialiseCauldron(){
+		// Use static references to the CauldronBehavior.maps
+		CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(ItemInit.WOODEN_BUCKET, (state, world, pos, player, hand, stack) -> {
+			return CauldronBehavior.emptyCauldron(state, world, pos, player, hand, stack, new ItemStack(ItemInit.WATER_WOODEN_BUCKET), AlkimiCraft::test, SoundEvents.ITEM_BUCKET_FILL);
+		});
+		CauldronBehavior.EMPTY_CAULDRON_BEHAVIOR.put(ItemInit.WATER_WOODEN_BUCKET, FILL_WITH_WATER);
+	}
+
 
 	private ServerWorld getModWorld(CommandContext<ServerCommandSource> context) {
 		return getWorld(context, WORLD_KEY);

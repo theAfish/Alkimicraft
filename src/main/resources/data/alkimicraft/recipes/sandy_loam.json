@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "alkimicraft:plant_ash"
+    },
+    {
+      "item": "alkimicraft:plant_ash"
+    },
+    {
+      "item": "alkimicraft:loamy_sand"
+    },
+    {
+      "item": "minecraft:gravel"
+    }
+  ],
+  "result": {
+    "item": "alkimicraft:sandy_loam",
+    "count": 2
+  }
+}
