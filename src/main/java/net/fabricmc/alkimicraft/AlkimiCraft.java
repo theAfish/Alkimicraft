@@ -11,7 +11,6 @@ import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.dimension.v1.FabricDimensions;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LeveledCauldronBlock;
 import net.minecraft.block.cauldron.CauldronBehavior;
@@ -58,10 +57,6 @@ public class AlkimiCraft implements ModInitializer {
 	private static final RegistryKey<DimensionOptions> DIMENSION_KEY = RegistryKey.of(Registry.DIMENSION_KEY, new Identifier(MOD_ID, "the_dry"));
 	private static RegistryKey<World> WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, DIMENSION_KEY.getValue());
 	private static final RegistryKey<DimensionType> DIMENSION_TYPE_KEY = RegistryKey.of(Registry.DIMENSION_TYPE_KEY, new Identifier(MOD_ID, "the_dry"));
-
-	private static boolean test(BlockState statex) {
-		return statex.get(LeveledCauldronBlock.LEVEL) == 3;
-	}
 
 	@Override
 	public void onInitialize() {
@@ -142,7 +137,9 @@ public class AlkimiCraft implements ModInitializer {
 	public static void initialiseCauldron(){
 		// Use static references to the CauldronBehavior.maps
 		CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(ItemInit.WOODEN_BUCKET, (state, world, pos, player, hand, stack) -> {
-			return CauldronBehavior.emptyCauldron(state, world, pos, player, hand, stack, new ItemStack(ItemInit.WATER_WOODEN_BUCKET), AlkimiCraft::test, SoundEvents.ITEM_BUCKET_FILL);
+			return CauldronBehavior.emptyCauldron(state, world, pos, player, hand, stack, new ItemStack(ItemInit.WATER_WOODEN_BUCKET), (statex) -> {
+				return statex.get(LeveledCauldronBlock.LEVEL) == 3;
+			}, SoundEvents.ITEM_BUCKET_FILL);
 		});
 		CauldronBehavior.EMPTY_CAULDRON_BEHAVIOR.put(ItemInit.WATER_WOODEN_BUCKET, FILL_WITH_WATER);
 	}

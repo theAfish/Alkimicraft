@@ -39,6 +39,8 @@ public class BlockInit {
 
     public static Block ARTEMISIA_ARENARIA = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "artemisia_arenaria"), new BlockArtemisiaArenaria(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().sounds(BlockSoundGroup.CROP).nonOpaque()));
     public static Block IRON_ROOT_GRASS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "iron_root_grass"), new BlockIronRootGrass(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().sounds(BlockSoundGroup.CROP).nonOpaque()));
+    public static Block FERTILE_BEANS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "fertile_beans"), new FertileBeans(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().sounds(BlockSoundGroup.CROP).nonOpaque()));
+
 
     public static Block DESERT_POPLAR_LEAVES = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_leaves"), createLeavesBlock(BlockSoundGroup.GRASS));
     public static Block DESERT_POPLAR_LOG = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_log"), createLogBlock(MapColor.OAK_TAN, MapColor.SPRUCE_BROWN));

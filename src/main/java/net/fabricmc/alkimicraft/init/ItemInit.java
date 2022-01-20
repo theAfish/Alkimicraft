@@ -69,6 +69,7 @@ public class ItemInit {
     public static final Item SEA_BUCKTHORN_FRUITS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "sea_buckthorn_fruits"), new AliasedBlockItem(BlockInit.SEA_BUCKTHORN,new Item.Settings().group(AlkimiCraft.SEEDS_GROUP).food(FoodComponents.SWEET_BERRIES)));
     public static final Item DESERT_POPLAR_SEEDS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "desert_poplar_seeds"), new AliasedBlockItem(BlockInit.DESERT_POPLAR_SAPLING, new Item.Settings().group(AlkimiCraft.SEEDS_GROUP)));
     public static final Item REED_SEEDS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "reed_seeds"), new AliasedBlockItem(BlockInit.BLOCK_REED,new Item.Settings().group(AlkimiCraft.SEEDS_GROUP)));
+    public static final Item FERTILE_BEANS_SEEDS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "fertile_beans_seeds"), new AliasedBlockItem(BlockInit.FERTILE_BEANS,new Item.Settings().group(AlkimiCraft.SEEDS_GROUP)));
 
 
     public static void init(){

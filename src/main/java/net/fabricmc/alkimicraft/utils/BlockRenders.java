@@ -27,5 +27,8 @@ public class BlockRenders {
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0xC8FF46, BlockInit.DESERT_POPLAR_LEAVES);
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.PENCIL_PLANT_TOP, RenderLayer.getCutoutMipped());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.FERTILE_BEANS, RenderLayer.getCutoutMipped());
+
     }
 }

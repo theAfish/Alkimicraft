@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "alkimicraft:block/just_planted_plant_0"
+    },
+    "age=1": {
+      "model": "alkimicraft:block/fertile_beans_1"
+    },
+    "age=2": {
+      "model": "alkimicraft:block/fertile_beans_1"
+    },
+    "age=3": {
+      "model": "alkimicraft:block/fertile_beans_2"
+    },
+    "age=4": {
+      "model": "alkimicraft:block/fertile_beans_2"
+    },
+    "age=5": {
+      "model": "alkimicraft:block/fertile_beans_3"
+    },
+    "age=6": {
+      "model": "alkimicraft:block/fertile_beans_4"
+    },
+    "age=7": {
+      "model": "alkimicraft:block/fertile_beans_4"
+    }
+  }
+}
