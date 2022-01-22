@@ -6,6 +6,8 @@ import net.fabricmc.alkimicraft.client.renderer.StarryBodyEntityRenderer;
 import net.fabricmc.alkimicraft.client.renderer.block.entity.TipiFireEntityRenderer;
 import net.fabricmc.alkimicraft.init.BlockInit;
 import net.fabricmc.alkimicraft.init.EntityInit;
+import net.fabricmc.alkimicraft.init.ScreenInit;
+import net.fabricmc.alkimicraft.screen.WoodenBarrelScreen;
 import net.fabricmc.alkimicraft.utils.BlockEntityRenders;
 import net.fabricmc.alkimicraft.utils.BlockRenders;
 import net.fabricmc.alkimicraft.utils.FluidRenders;
@@ -15,6 +17,7 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
@@ -34,6 +37,7 @@ public class AlkimiCraftClient implements ClientModInitializer {
         ItemRenders.defineRenders();
         FluidRenders.defineRenders();
         BlockEntityRenders.defineRenders();
+        ScreenRegistry.register(ScreenInit.WOODEN_BARREL_SCREEN_HANDLER, WoodenBarrelScreen::new);
 
 
         EntityRendererRegistry.INSTANCE.register(EntityInit.STARRY_BODY, (context) -> {

@@ -32,7 +32,6 @@ public class FluidRenders {
 
         setupFluidRendering(FluidInit.FRESH_WATER_STILL, FluidInit.FRESH_WATER_FLOW, new Identifier("minecraft", "water"), 0x0EA0E4);
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), FluidInit.FRESH_WATER_STILL, FluidInit.FRESH_WATER_FLOW);
-
     }
 
     public static void setupFluidRendering(final Fluid still, final Fluid flowing, final Identifier textureFluidId, final int color) {

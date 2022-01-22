@@ -3,7 +3,13 @@ package net.fabricmc.alkimicraft.utils;
 import net.fabricmc.alkimicraft.init.BlockInit;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.MapColor;
+import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.world.BlockRenderView;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.level.ColorResolver;
 
 public class BlockRenders {
 
@@ -29,6 +35,10 @@ public class BlockRenders {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.PENCIL_PLANT_TOP, RenderLayer.getCutoutMipped());
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.FERTILE_BEANS, RenderLayer.getCutoutMipped());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.WOODEN_BARREL_WATER, RenderLayer.getTranslucent());
+        ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getWaterColor(view, pos), BlockInit.WOODEN_BARREL_WATER);
+
 
     }
 }

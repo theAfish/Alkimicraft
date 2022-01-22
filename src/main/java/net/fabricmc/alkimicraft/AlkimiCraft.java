@@ -70,8 +70,7 @@ public class AlkimiCraft implements ModInitializer {
 		FluidInit.init();
 		EntityInit.init();
 		TagsInit.init();
-
-		initialiseCauldron();
+		ScreenInit.init();
 
 		// Dimensions
 		Registry.register(Registry.CHUNK_GENERATOR, new Identifier(MOD_ID, "the_dry"), DryChunkGenerator.CODEC);
@@ -131,17 +130,6 @@ public class AlkimiCraft implements ModInitializer {
 		}
 
 		return 1;
-	}
-
-
-	public static void initialiseCauldron(){
-		// Use static references to the CauldronBehavior.maps
-		CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(ItemInit.WOODEN_BUCKET, (state, world, pos, player, hand, stack) -> {
-			return CauldronBehavior.emptyCauldron(state, world, pos, player, hand, stack, new ItemStack(ItemInit.WATER_WOODEN_BUCKET), (statex) -> {
-				return statex.get(LeveledCauldronBlock.LEVEL) == 3;
-			}, SoundEvents.ITEM_BUCKET_FILL);
-		});
-		CauldronBehavior.EMPTY_CAULDRON_BEHAVIOR.put(ItemInit.WATER_WOODEN_BUCKET, FILL_WITH_WATER);
 	}
 
 

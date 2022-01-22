@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "level=1": {
+      "model": "alkimicraft:block/wooden_barrel_water_level1"
+    },
+    "level=2": {
+      "model": "alkimicraft:block/wooden_barrel_water_level2"
+    },
+    "level=3": {
+      "model": "alkimicraft:block/wooden_barrel_water_full"
+    }
+  }
+}

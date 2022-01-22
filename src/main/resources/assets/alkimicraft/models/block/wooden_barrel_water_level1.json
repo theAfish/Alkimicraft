@@ -1,0 +1,11 @@
+{
+  "parent": "alkimicraft:block/template_barrel_level1",
+  "textures": {
+    "content": "minecraft:block/water_still",
+    "inside": "minecraft:block/barrel_side",
+    "particle": "minecraft:block/barrel_top",
+    "top": "minecraft:block/barrel_top",
+    "bottom": "minecraft:block/barrel_bottom",
+    "side": "minecraft:block/barrel_side"
+  }
+}

@@ -61,6 +61,8 @@ public class ItemInit {
 
     public static final Item PLANT_ASH = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "plant_ash"), new Item(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
+    public static final Item WOODEN_BARREL = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"wooden_barrel"), new BlockItem(BlockInit.WOODEN_BARREL, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+
 
     // Seeds
     public static final Item IRON_ROOT_GRASS_SEED = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "iron_root_grass_seeds"), new AliasedBlockItem(BlockInit.IRON_ROOT_GRASS,new Item.Settings().group(AlkimiCraft.SEEDS_GROUP)));
