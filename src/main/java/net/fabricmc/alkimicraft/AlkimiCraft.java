@@ -68,9 +68,12 @@ public class AlkimiCraft implements ModInitializer {
 		ItemInit.init();
 		BlockInit.init();
 		FluidInit.init();
+		RecipeInit.init();
 		EntityInit.init();
 		TagsInit.init();
 		ScreenInit.init();
+
+		System.out.println(FluidInit.FRESH_WATER_STILL.toString());
 
 		// Dimensions
 		Registry.register(Registry.CHUNK_GENERATOR, new Identifier(MOD_ID, "the_dry"), DryChunkGenerator.CODEC);

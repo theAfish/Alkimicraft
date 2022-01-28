@@ -9,6 +9,8 @@ import net.minecraft.util.Identifier;
 
 public class BlockTagsInit {
     public static final Tag<Block> DESERT_POPLAR_LOGS = TagFactory.BLOCK.create(new Identifier(AlkimiCraft.MOD_ID, "desert_poplar_logs"));
+    public static final Tag<Block> WOODEN_BARREL = TagFactory.BLOCK.create(new Identifier(AlkimiCraft.MOD_ID, "wooden_barrel"));
+
 
     public static void init(){}
 }

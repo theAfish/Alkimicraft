@@ -1,9 +1,16 @@
 package net.fabricmc.alkimicraft.blocks;
 
 import net.fabricmc.alkimicraft.blocks.entities.WoodenBarrelEntity;
+import net.fabricmc.alkimicraft.init.BlockEntityInit;
+import net.fabricmc.alkimicraft.init.BlockInit;
+import net.fabricmc.alkimicraft.init.tags.BlockTagsInit;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.*;
 import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.BrewingStandBlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -16,6 +23,7 @@ import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.stat.Stats;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
@@ -58,9 +66,14 @@ public abstract class AbstractWoodenBarrel extends BlockWithEntity implements Bl
         return ActionResult.FAIL;
     }
 
+    @Nullable
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        return world.isClient ? null : checkType(type, BlockEntityInit.WOODEN_BARREL_ENTITY, WoodenBarrelEntity::tick);
+    }
+
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if (state.getBlock() != newState.getBlock()) {
+        if (state.getBlock() != newState.getBlock() && !newState.isIn(BlockTagsInit.WOODEN_BARREL)) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof WoodenBarrelEntity) {
                 ItemScatterer.spawn(world, pos, (WoodenBarrelEntity)blockEntity);
@@ -116,6 +129,13 @@ public abstract class AbstractWoodenBarrel extends BlockWithEntity implements Bl
     }
     static {
         OUTLINE_SHAPE = VoxelShapes.combineAndSimplify(VoxelShapes.fullCube(), RAYCAST_SHAPE, BooleanBiFunction.ONLY_FIRST);
+    }
+
+    public static int getLevel(BlockState state){
+        if (state.contains(Properties.LEVEL_3)){
+            return state.get(Properties.LEVEL_3);
+        }
+        return 0;
     }
 
     @Nullable

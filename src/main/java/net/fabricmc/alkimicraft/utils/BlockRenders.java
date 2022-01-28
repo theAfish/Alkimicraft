@@ -39,6 +39,9 @@ public class BlockRenders {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.WOODEN_BARREL_WATER, RenderLayer.getTranslucent());
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getWaterColor(view, pos), BlockInit.WOODEN_BARREL_WATER);
 
+//        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.WOODEN_BARREL_SEWAGE, RenderLayer.getTranslucent());
+        ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0xB98747, BlockInit.WOODEN_BARREL_SEWAGE);
+
 
     }
 }

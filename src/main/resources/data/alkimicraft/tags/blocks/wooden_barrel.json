@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values":[
+    "alkimicraft:wooden_barrel",
+    "alkimicraft:wooden_barrel_water",
+    "alkimicraft:wooden_barrel_sewage"
+  ]
+}

@@ -62,6 +62,13 @@ public class LeveledBarrel extends AbstractWoodenBarrel{
         world.setBlockState(pos, i == 0 ? BlockInit.WOODEN_BARREL.getDefaultState() : state.with(LEVEL, i));
     }
 
+    public static void decrementFluidLevel(BlockState state, World world, BlockPos pos, int level) {
+        int i = state.get(LEVEL) - level;
+        if (i >= 0){
+            world.setBlockState(pos, i == 0 ? BlockInit.WOODEN_BARREL.getDefaultState() : state.with(LEVEL, i));
+        }
+    }
+
     public void precipitationTick(BlockState state, World world, BlockPos pos, Biome.Precipitation precipitation) {
         if (WoodenBarrel.canFillWithPrecipitation(world, precipitation) && state.get(LEVEL) != 3 && this.precipitationPredicate.test(precipitation)) {
             world.setBlockState(pos, state.cycle(LEVEL));

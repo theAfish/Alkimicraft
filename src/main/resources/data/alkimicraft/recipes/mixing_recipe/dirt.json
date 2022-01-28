@@ -1,0 +1,16 @@
+{
+  "type": "alkimicraft:mixing_recipe",
+  "ingredients": [
+    {
+      "item": "alkimicraft:barren_loam"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    }
+  ],
+  "level": 1,
+  "result": {
+    "item": "minecraft:dirt",
+    "count": 1
+  }
+}

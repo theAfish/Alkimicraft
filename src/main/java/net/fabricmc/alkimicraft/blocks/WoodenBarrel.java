@@ -1,10 +1,13 @@
 package net.fabricmc.alkimicraft.blocks;
 
 import net.fabricmc.alkimicraft.blocks.entities.WoodenBarrelEntity;
+import net.fabricmc.alkimicraft.init.BlockEntityInit;
 import net.fabricmc.alkimicraft.init.BlockInit;
 import net.minecraft.block.*;
 import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.Fluids;
@@ -38,6 +41,11 @@ public class WoodenBarrel extends AbstractWoodenBarrel {
         } else {
             return false;
         }
+    }
+
+    @Nullable
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        return null;
     }
 
     public void precipitationTick(BlockState state, World world, BlockPos pos, Biome.Precipitation precipitation) {

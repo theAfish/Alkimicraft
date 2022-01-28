@@ -25,6 +25,8 @@ public class WoodenBarrelScreen extends HandledScreen<ScreenHandler> {
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
+        int k = ((WoodenBarrelScreenHandler)this.handler).getMixProgress();
+        this.drawTexture(matrices, x + 88, y + 35, 176, 14, k + 1, 16);
     }
 
     @Override

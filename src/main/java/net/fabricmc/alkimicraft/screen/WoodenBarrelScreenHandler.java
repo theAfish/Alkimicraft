@@ -1,32 +1,52 @@
 package net.fabricmc.alkimicraft.screen;
 
 import net.fabricmc.alkimicraft.blocks.entities.WoodenBarrelEntity;
+import net.fabricmc.alkimicraft.init.RecipeInit;
 import net.fabricmc.alkimicraft.init.ScreenInit;
+import net.fabricmc.alkimicraft.recipes.MixingRecipe;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.packet.s2c.play.ScreenHandlerSlotUpdateS2CPacket;
+import net.minecraft.recipe.*;
+import net.minecraft.recipe.book.RecipeBookCategory;
+import net.minecraft.screen.AbstractRecipeScreenHandler;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.slot.FurnaceOutputSlot;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.world.World;
 
-public class WoodenBarrelScreenHandler extends ScreenHandler {
+import java.util.Optional;
+
+public class WoodenBarrelScreenHandler extends AbstractRecipeScreenHandler<Inventory> {
     private final Inventory inventory;
+    protected final World world;
+    private final RecipeType<? extends MixingRecipe> recipeType = RecipeInit.MIXING_RECIPE;
+    private final PropertyDelegate propertyDelegate;
 
     //This constructor gets called on the client when the server wants it to open the screenHandler,
     //The client will call the other constructor with an empty Inventory and the screenHandler will automatically
     //sync this empty inventory with the inventory on the server.
     public WoodenBarrelScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(5));
+        this(syncId, playerInventory, new SimpleInventory(5), new ArrayPropertyDelegate(2));
     }
 
     //This constructor gets called from the BlockEntity on the server without calling the other constructor first, the server knows the inventory of the container
     //and can therefore directly provide it as an argument. This inventory will then be synced to the client.
-    public WoodenBarrelScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+    public WoodenBarrelScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
         super(ScreenInit.WOODEN_BARREL_SCREEN_HANDLER, syncId);
         checkSize(inventory, 5);
         this.inventory = inventory;
+        this.world = playerInventory.player.world;
         //some inventories do custom logic when a player opens it.
+        checkDataCount(propertyDelegate, 2);
+        this.propertyDelegate = propertyDelegate;
         inventory.onOpen(playerInventory.player);
 
         //This will place the slot in the correct locations for a 3x3 Grid. The slots exist on both server and client!
@@ -39,7 +59,7 @@ public class WoodenBarrelScreenHandler extends ScreenHandler {
                 this.addSlot(new Slot(inventory, l + m * 2, 44 + l * 18, 25 + m * 18));
             }
         }
-        this.addSlot(new Slot(inventory, 4, 120, 34));
+        this.addSlot(new FurnaceOutputSlot(playerInventory.player, inventory, 4, 120, 34));
 
         //The player inventory
         for (m = 0; m < 3; ++m) {
@@ -52,11 +72,62 @@ public class WoodenBarrelScreenHandler extends ScreenHandler {
             this.addSlot(new Slot(playerInventory, m, 8 + m * 18, 142));
         }
 
+        this.addProperties(propertyDelegate);
     }
 
     @Override
     public boolean canUse(PlayerEntity player) {
         return this.inventory.canPlayerUse(player);
+    }
+
+    @Override
+    public void populateRecipeFinder(RecipeMatcher finder) {
+
+    }
+
+    @Override
+    public void clearCraftingSlots() {
+        this.slots.clear();
+    }
+
+    @Override
+    public boolean matches(Recipe<? super Inventory> recipe) {
+        return recipe.matches(this.inventory, this.world);
+    }
+
+    @Override
+    public int getCraftingResultSlotIndex() {
+        return 4;
+    }
+
+    @Override
+    public int getCraftingWidth() {
+        return 2;
+    }
+
+    @Override
+    public int getCraftingHeight() {
+        return 2;
+    }
+
+    @Override
+    public int getCraftingSlotCount() {
+        return 4;
+    }
+
+    @Override
+    public RecipeBookCategory getCategory() {
+        return null;
+    }
+
+    public boolean canInsertIntoSlot(int index) {
+        return index != 4;
+    }
+
+    public int getMixProgress() {
+        int mixTime = this.propertyDelegate.get(0);
+        int maxTime = this.propertyDelegate.get(1);
+        return maxTime != 0 && mixTime != 0 ? mixTime * 24 / maxTime : 0;
     }
 
     // Shift + Player Inv Slot

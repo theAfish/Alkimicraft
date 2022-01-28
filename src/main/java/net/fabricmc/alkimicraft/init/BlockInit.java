@@ -86,6 +86,7 @@ public class BlockInit {
 
     public static final Block WOODEN_BARREL = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"wooden_barrel"), new WoodenBarrel(AbstractBlock.Settings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
     public static final Block WOODEN_BARREL_WATER = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"wooden_barrel_water"), new LeveledBarrel(AbstractBlock.Settings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD), LeveledCauldronBlock.RAIN_PREDICATE, WATER_BARREL_BEHAVIOR));
+    public static final Block WOODEN_BARREL_SEWAGE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"wooden_barrel_sewage"), new LeveledBarrel(AbstractBlock.Settings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD), LeveledCauldronBlock.RAIN_PREDICATE, WATER_BARREL_BEHAVIOR));
 
 
 
