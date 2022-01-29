@@ -1,14 +1,60 @@
 {
   "itemGroup.alkimicraft.item_group": "AlkimiCraft",
+  "itemGroup.alkimicraft.seeds_group": "AlkimiCraft: Seeds",
 
-  "item.alkimicraft.test_item": "Test Item",
-  "item.alkimicraft.test_item.line1": "This is a test item",
+  "item.alkimicraft.iron_root_grass_seeds": "Iron Root Grass Seeds",
+  "iron_root_grass_seed.tooltips": "Plant on cobblestone or porous stone",
 
-  "block.alkimicraft.test_plant": "Test Plant",
 
-  "item.alkimicraft.test_seeds": "Test Seeds",
-  "item.alkimicraft.test_seeds.line1": "Plant on farmland to grow Test Plants",
+  "item.alkimicraft.artemisia_arenaria_seeds": "Artemisia Arenaria Seeds",
+  "artemisia_arenaria_seeds.tooltips": "Plant on sand or loamy sand",
 
   "item.alkimicraft.desert_poplar_seeds": "Desert Poplar Seeds",
-  "item.alkimicraft.desert_poplar_seeds.line1": "Plant on loamy sand"
+  "desert_poplar_seeds.tooltips": "Plant on loamy sand",
+
+  "item.alkimicraft.pencil_plant_seeds": "Pencil Plant Seeds",
+  "pencil_plant_seeds.tooltips": "Plant on loamy sand",
+
+  "item.alkimicraft.sea_buckthorn_fruits": "Sea Buckthorn Fruits",
+  "sea_buckthorn_fruits.tooltips": "Plant on sand or loamy sand",
+
+  "item.alkimicraft.reed_seeds": "Reed Seeds",
+  "reed_seeds.tooltips": "Plant under shallow water or sewage, purifying sewage while growing",
+
+  "item.alkimicraft.fertile_beans_seeds": "Fertile Beans",
+  "fertile_beans_seeds.tooltips": "Plant on sandy loam",
+
+  "item.alkimicraft.grass_seeds": "Grass Seeds",
+  "grass_seeds.tooltip": "Try using it on several soil blocks!",
+
+  "item.alkimicraft.toxic_sewage_bucket": "Toxic Sewage Bucket",
+  "item.alkimicraft.wooden_bucket": "Wooden Bucket",
+  "item.alkimicraft.water_wooden_bucket": "Wooden Bucket Contains Water",
+  "item.alkimicraft.sewage_wooden_bucket": "Wooden Bucket Contains Sewage",
+  "item.alkimicraft.herb": "Herb",
+  "item.alkimicraft.reed_sticks": "Reed Sticks",
+  "item.alkimicraft.fire_plough": "Fire Plough",
+  "item.alkimicraft.plant_ash": "Plant Ash",
+
+
+  "block.alkimicraft.wooden_barrel": "Wooden Barrel",
+  "block.alkimicraft.wooden_barrel_water": "Wooden Barrel",
+  "block.alkimicraft.tipi_fire": "Tipi Fire",
+  "block.alkimicraft.packing_table": "Packing Table",
+  "block.alkimicraft.packed_sticks": "Packed Sticks",
+  "block.alkimicraft.desert_poplar_log": "Desert Poplar Log",
+  "block.alkimicraft.desert_poplar_leaves": "Desert Poplar Leaves",
+  "block.alkimicraft.desert_poplar_planks": "Desert Poplar Planks",
+  "block.alkimicraft.pencil_plant": "Pencil Plant",
+  "item.alkimicraft.pencil_plant_log": "Pencil Plant Log",
+  "block.alkimicraft.pencil_plant_planks": "Pencil Plant Planks",
+  "block.alkimicraft.loamy_sand": "Loamy Sand",
+  "block.alkimicraft.sandy_loam": "Sandy Loam",
+  "block.alkimicraft.barren_loam": "Barren Loam",
+  "block.alkimicraft.sedimentary_rock": "Sedimentary Rock",
+  "block.alkimicraft.ash_block": "Ash Block",
+  "block.alkimicraft.charred_log": "Charred Log",
+  "block.alkimicraft.sparse_grass_block": "Sparse Grass Block",
+  "block.alkimicraft.porous_stone": "Porous Stone",
+  "block.alkimicraft.iron_cobblestone": "Iron Cobblestone"
 }

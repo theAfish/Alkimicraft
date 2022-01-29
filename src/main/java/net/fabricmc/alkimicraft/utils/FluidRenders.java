@@ -27,11 +27,11 @@ public class FluidRenders {
         setupFluidRendering(FluidInit.TOXIC_SEWAGE_STILL, FluidInit.TOXIC_SEWAGE_FLOW, new Identifier("alkimicraft", "toxic_sewage"), 0x8A8A6D);
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), FluidInit.TOXIC_SEWAGE_STILL, FluidInit.TOXIC_SEWAGE_FLOW);
 
-        setupFluidRendering(FluidInit.SALTY_WATER_STILL, FluidInit.SALTY_WATER_FLOW, new Identifier("minecraft", "water"), 0x38CAED); // 0x38CAED
-        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), FluidInit.SALTY_WATER_STILL, FluidInit.SALTY_WATER_FLOW);
-
-        setupFluidRendering(FluidInit.FRESH_WATER_STILL, FluidInit.FRESH_WATER_FLOW, new Identifier("minecraft", "water"), 0x0EA0E4);
-        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), FluidInit.FRESH_WATER_STILL, FluidInit.FRESH_WATER_FLOW);
+//        setupFluidRendering(FluidInit.SALTY_WATER_STILL, FluidInit.SALTY_WATER_FLOW, new Identifier("minecraft", "water"), 0x38CAED); // 0x38CAED
+//        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), FluidInit.SALTY_WATER_STILL, FluidInit.SALTY_WATER_FLOW);
+//
+//        setupFluidRendering(FluidInit.FRESH_WATER_STILL, FluidInit.FRESH_WATER_FLOW, new Identifier("minecraft", "water"), 0x0EA0E4);
+//        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), FluidInit.FRESH_WATER_STILL, FluidInit.FRESH_WATER_FLOW);
     }
 
     public static void setupFluidRendering(final Fluid still, final Fluid flowing, final Identifier textureFluidId, final int color) {

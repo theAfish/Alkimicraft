@@ -1,11 +1,60 @@
 {
   "itemGroup.alkimicraft.item_group": "炼造工艺",
+  "itemGroup.alkimicraft.seeds_group": "炼造工艺：种子",
 
-  "item.alkimicraft.test_item": "测试物品",
-  "item.alkimicraft.test_item.line1": "这是一个测试物品",
+  "item.alkimicraft.iron_root_grass_seeds": "铁根草种子",
+  "iron_root_grass_seed.tooltips": "种植于圆石或多孔石上",
 
-  "block.alkimicraft.test_plant": "测试作物",
+
+  "item.alkimicraft.artemisia_arenaria_seeds": "白沙蒿种子",
+  "artemisia_arenaria_seeds.tooltips": "种植于沙子或壤质沙土上",
 
   "item.alkimicraft.desert_poplar_seeds": "胡杨种子",
-  "item.alkimicraft.desert_poplar_seeds.line1": "种植于壤质沙土上"
+  "desert_poplar_seeds.tooltips": "种植于壤质沙土上，需等待其慢慢成长",
+
+  "item.alkimicraft.pencil_plant_seeds": "绿玉树种子",
+  "pencil_plant_seeds.tooltips": "种植于壤质沙土上",
+
+  "item.alkimicraft.sea_buckthorn_fruits": "沙棘果",
+  "sea_buckthorn_fruits.tooltips": "可食用，种植于沙子或壤质沙土上",
+
+  "item.alkimicraft.reed_seeds": "芦苇种子",
+  "reed_seeds.tooltips": "在较浅的水或污水中种植，生长时会净化污水",
+
+  "item.alkimicraft.fertile_beans_seeds": "富饶豆",
+  "fertile_beans_seeds.tooltips": "种植于砂质壤土上，能够提升土壤质量",
+
+  "item.alkimicraft.grass_seeds": "草籽",
+  "grass_seeds.tooltip": "在某些土块上试试看！",
+
+  "item.alkimicraft.toxic_sewage_bucket": "污水桶",
+  "item.alkimicraft.wooden_bucket": "木桶",
+  "item.alkimicraft.water_wooden_bucket": "盛水木桶",
+  "item.alkimicraft.sewage_wooden_bucket": "盛污水木桶",
+  "item.alkimicraft.herb": "草叶",
+  "item.alkimicraft.reed_sticks": "芦苇杆",
+  "item.alkimicraft.fire_plough": "火犁",
+  "item.alkimicraft.plant_ash": "草木灰",
+
+
+  "block.alkimicraft.wooden_barrel": "木桶",
+  "block.alkimicraft.wooden_barrel_water": "木桶",
+  "block.alkimicraft.tipi_fire": "小火堆",
+  "block.alkimicraft.packing_table": "打包桌",
+  "block.alkimicraft.packed_sticks": "一捆木棍",
+  "block.alkimicraft.desert_poplar_log": "胡杨原木",
+  "block.alkimicraft.desert_poplar_leaves": "胡杨树叶",
+  "block.alkimicraft.desert_poplar_planks": "胡杨木板",
+  "block.alkimicraft.pencil_plant": "绿玉树",
+  "item.alkimicraft.pencil_plant_log": "绿玉树原木",
+  "block.alkimicraft.pencil_plant_planks": "绿玉树木板",
+  "block.alkimicraft.loamy_sand": "壤质沙土",
+  "block.alkimicraft.sandy_loam": "砂质壤土",
+  "block.alkimicraft.barren_loam": "贫瘠壤土",
+  "block.alkimicraft.sedimentary_rock": "沉积岩",
+  "block.alkimicraft.ash_block": "灰烬块",
+  "block.alkimicraft.charred_log": "焦木",
+  "block.alkimicraft.sparse_grass_block": "稀疏草方块",
+  "block.alkimicraft.porous_stone": "多孔石",
+  "block.alkimicraft.iron_cobblestone": "含铁圆石"
 }

@@ -49,8 +49,8 @@ public class BlockInit {
 
 //    public static final TestPlant TEST_PLANT = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "test_plant"), new TestPlant(FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().strength(0.0F, 0.0F).sounds(BlockSoundGroup.CROP).nonOpaque()));
     public static Block TOXIC_SEWAGE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "toxic_sewage"), new BlockSewage(FluidInit.TOXIC_SEWAGE_STILL, FabricBlockSettings.of(Material.WATER).dropsNothing()){});
-    public static Block SALTY_WATER = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "salty_water"), new FluidBlock(FluidInit.SALTY_WATER_STILL, FabricBlockSettings.of(Material.WATER).dropsNothing()){});
-    public static Block FRESH_WATER = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "fresh_water"), new FluidBlock(FluidInit.FRESH_WATER_STILL, FabricBlockSettings.of(Material.WATER).dropsNothing()){});
+//    public static Block SALTY_WATER = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "salty_water"), new FluidBlock(FluidInit.SALTY_WATER_STILL, FabricBlockSettings.of(Material.WATER).dropsNothing()){});
+//    public static Block FRESH_WATER = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "fresh_water"), new FluidBlock(FluidInit.FRESH_WATER_STILL, FabricBlockSettings.of(Material.WATER).dropsNothing()){});
 
     public static final BlockReed BLOCK_REED = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "reed_block"), new BlockReed(AbstractBlock.Settings.of(Material.UNDERWATER_PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque()));
     public static Block LOAMY_SAND = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "loamy_sand"), new Block(AbstractBlock.Settings.of(Material.SOIL).strength(0.5F).sounds(BlockSoundGroup.GRAVEL)));
@@ -60,6 +60,7 @@ public class BlockInit {
     public static Block ASH_BLOCK = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "ash_block"), new Block(AbstractBlock.Settings.of(Material.SOIL).strength(0.5F).sounds(BlockSoundGroup.SAND)));
     public static Block CHARRED_LOG = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"charred_log"), createLogBlock(MapColor.BLACK, MapColor.SPRUCE_BROWN));
 
+    public static Block SPARSE_GRASS_BLOCK = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "sparse_grass_block"), new SparseGrassBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC).ticksRandomly().strength(0.9F).sounds(BlockSoundGroup.GRAVEL)));
 
     public static Block POROUS_STONE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "porous_stone"), new BlockPorousStone(AbstractBlock.Settings.of(Material.STONE).strength(1.0F).sounds(BlockSoundGroup.STONE)));
     public static Block IRON_COBBLESTONE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "iron_cobblestone"), new BlockIronCobblestone(AbstractBlock.Settings.of(Material.STONE).strength(1.0F).sounds(BlockSoundGroup.STONE)));
