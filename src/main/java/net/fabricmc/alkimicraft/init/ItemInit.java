@@ -1,13 +1,10 @@
 package net.fabricmc.alkimicraft.init;
 
 import net.fabricmc.alkimicraft.AlkimiCraft;
-import net.fabricmc.alkimicraft.blocks.BlockReed;
 import net.fabricmc.alkimicraft.items.*;
-import net.minecraft.block.*;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
-import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
@@ -54,11 +51,17 @@ public class ItemInit {
     public static final Item DESERT_POPLAR_LEAVES = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_leaves"), new BlockItem(BlockInit.DESERT_POPLAR_LEAVES, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
     public static final Item DESERT_POPLAR_PLANKS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_planks"), new BlockItem(BlockInit.DESERT_POPLAR_PLANKS, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
+//    public static final Item JUJUBE_TOP = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "jujube_top"), new BlockItem(BlockInit.JUJUBE_TOP, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+
+    public static final Item JUJUBE_LEAVES = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "jujube_leaves"), new BlockItem(BlockInit.JUJUBE_LEAVES, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item JUJUBE_LOG = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "jujube_log"), new Item(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+
 
     public static final Item PENCIL_PLANT = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "pencil_plant"), new BlockItem(BlockInit.PENCIL_PLANT,new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 //    public static final Item PENCIL_PLANT_TOP = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "pencil_plant_top"), new BlockItem(BlockInit.PENCIL_PLANT_TOP, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
     public static final Item PENCIL_PLANT_LOG = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "pencil_plant_log"), new Item(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
     public static final Item PENCIL_PLANT_PLANKS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"pencil_plant_planks"), new BlockItem(BlockInit.PENCIL_PLANT_PLANKS, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item DETOXIFIED_PENCIL_PLANT_PLANKS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"detoxified_pencil_plant_planks"), new BlockItem(BlockInit.DETOXIFIED_PENCIL_PLANT_PLANKS, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
 
     public static final Item FIRE_PLOUGH = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "fire_plough"), new FirePlough(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
@@ -69,6 +72,8 @@ public class ItemInit {
     public static final Item PLANT_ASH = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "plant_ash"), new Item(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
     public static final Item WOODEN_BARREL = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"wooden_barrel"), new BlockItem(BlockInit.WOODEN_BARREL, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+
+    public static final Item THE_DRY_TELEPORTER = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"the_dry_teleporter"), new TheDryTeleporter(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
 
     // Seeds
@@ -87,7 +92,8 @@ public class ItemInit {
     public static final Item FERTILE_BEANS_SEEDS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "fertile_beans_seeds"), new AliasedBlockItem(BlockInit.FERTILE_BEANS,new Item.Settings().group(AlkimiCraft.SEEDS_GROUP)){
         @Override public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {tooltip.add( new TranslatableText("fertile_beans_seeds.tooltips").formatted(Formatting.GREEN));}});
     public static final Item GRASS_SEEDS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "grass_seeds"), new GrassSeeds(new Item.Settings().group(AlkimiCraft.SEEDS_GROUP)));
-
+    public static final Item JUJUBE = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "jujube"), new AliasedBlockItem(BlockInit.JUJUBE_TOP, new Item.Settings().group(AlkimiCraft.SEEDS_GROUP).food(FoodComponents.APPLE)){
+        @Override public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {tooltip.add( new TranslatableText("jujube.tooltips").formatted(Formatting.GREEN));}});
 
     public static void init(){
 

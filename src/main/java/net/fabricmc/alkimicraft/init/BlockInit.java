@@ -54,16 +54,16 @@ public class BlockInit {
 
     public static final BlockReed BLOCK_REED = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "reed_block"), new BlockReed(AbstractBlock.Settings.of(Material.UNDERWATER_PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque()));
     public static Block LOAMY_SAND = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "loamy_sand"), new Block(AbstractBlock.Settings.of(Material.SOIL).strength(0.5F).sounds(BlockSoundGroup.GRAVEL)));
-    public static Block SANDY_LOAM = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "sandy_loam"), new Block(AbstractBlock.Settings.of(Material.SOIL).strength(0.6F).sounds(BlockSoundGroup.GRAVEL)));
-    public static Block BARREN_LOAM = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "barren_loam"), new Block(AbstractBlock.Settings.of(Material.SOIL).strength(0.7F).sounds(BlockSoundGroup.GRAVEL)));
-    public static Block SEDIMENTARY_ROCK = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "sedimentary_rock"), new Block(AbstractBlock.Settings.of(Material.STONE).strength(1.2F).sounds(BlockSoundGroup.STONE).requiresTool()));
+    public static Block SANDY_LOAM = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "sandy_loam"), new Block(AbstractBlock.Settings.of(Material.SOIL).strength(0.5F).sounds(BlockSoundGroup.GRAVEL)));
+    public static Block BARREN_LOAM = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "barren_loam"), new Block(AbstractBlock.Settings.of(Material.SOIL).strength(0.5F).sounds(BlockSoundGroup.GRAVEL)));
+    public static Block SEDIMENTARY_ROCK = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "sedimentary_rock"), new Block(AbstractBlock.Settings.of(Material.STONE).strength(1.5F, 6.0F).sounds(BlockSoundGroup.STONE).requiresTool()));
     public static Block ASH_BLOCK = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "ash_block"), new Block(AbstractBlock.Settings.of(Material.SOIL).strength(0.5F).sounds(BlockSoundGroup.SAND)));
     public static Block CHARRED_LOG = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"charred_log"), createLogBlock(MapColor.BLACK, MapColor.SPRUCE_BROWN));
 
     public static Block SPARSE_GRASS_BLOCK = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "sparse_grass_block"), new SparseGrassBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC).ticksRandomly().strength(0.9F).sounds(BlockSoundGroup.GRAVEL)));
 
-    public static Block POROUS_STONE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "porous_stone"), new BlockPorousStone(AbstractBlock.Settings.of(Material.STONE).strength(1.0F).sounds(BlockSoundGroup.STONE)));
-    public static Block IRON_COBBLESTONE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "iron_cobblestone"), new BlockIronCobblestone(AbstractBlock.Settings.of(Material.STONE).strength(1.0F).sounds(BlockSoundGroup.STONE)));
+    public static Block POROUS_STONE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "porous_stone"), new BlockPorousStone(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(1.2F, 6.0F).sounds(BlockSoundGroup.STONE)));
+    public static Block IRON_COBBLESTONE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "iron_cobblestone"), new BlockIronCobblestone(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.STONE)));
 
 
     public static Block ARTEMISIA_ARENARIA = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "artemisia_arenaria"), new BlockArtemisiaArenaria(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().sounds(BlockSoundGroup.CROP).nonOpaque()));
@@ -76,10 +76,17 @@ public class BlockInit {
     public static Block DESERT_POPLAR_SAPLING = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "desert_poplar_sapling"), new DesertPoplarSaplingBlock(new DesertPoplarSaplingGenerator(), AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS)));
     public static Block DESERT_POPLAR_PLANKS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_planks"), new Block(AbstractBlock.Settings.of(Material.WOOD).strength(1f).sounds(BlockSoundGroup.WOOD)));
 
+    public static Block JUJUBE_LEAVES = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"jujube_leaves"), createLeavesBlock(BlockSoundGroup.GRASS));
+    public static JujubeLog JUJUBE_LOG = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"jujube_log"), new JujubeLog(AbstractBlock.Settings.of(Material.WOOD).strength(0.5F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
+    public static Block JUJUBE_TOP = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "jujube_top"), new JujubeTreeTop(AbstractBlock.Settings.of(Material.PLANT).ticksRandomly().strength(0.4F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
+
+
     public static Block SEA_BUCKTHORN = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "sea_buckthorn"), new SeaBuckthorn(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().sounds(BlockSoundGroup.CROP).nonOpaque()));
-    public static Block PENCIL_PLANT = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"pencil_plant"), new PencilPlant(AbstractBlock.Settings.of(Material.PLANT).strength(0.4F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
+    public static Block PENCIL_PLANT = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"pencil_plant"), new PencilPlant(AbstractBlock.Settings.of(Material.WOOD).strength(0.4F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
     public static Block PENCIL_PLANT_TOP = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "pencil_plant_top"), new PencilPlantTop((PencilPlant) PENCIL_PLANT, AbstractBlock.Settings.of(Material.PLANT).ticksRandomly().strength(0.4F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
     public static Block PENCIL_PLANT_PLANKS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"pencil_plant_planks"), new PencilPlantPlanks(AbstractBlock.Settings.of(Material.WOOD).strength(1f).sounds(BlockSoundGroup.WOOD)));
+    public static Block DETOXIFIED_PENCIL_PLANT_PLANKS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"detoxified_pencil_plant_planks"), new Block(AbstractBlock.Settings.of(Material.WOOD).strength(1f).sounds(BlockSoundGroup.WOOD)));
+
 
     public static Block TIPI_FIRE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "tipi_fire"), new TipiFire(true, 1, AbstractBlock.Settings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD).luminance(createLightLevelFromLitBlockState(10)).nonOpaque()));
     public static Block PACKING_TABLE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "packing_table"), new PackingTableBlock(AbstractBlock.Settings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
@@ -130,9 +137,13 @@ public class BlockInit {
                 return statex.get(LeveledCauldronBlock.LEVEL) == 3;
             }, SoundEvents.ITEM_BUCKET_FILL);
         });
-        CauldronBehavior.EMPTY_CAULDRON_BEHAVIOR.put(ItemInit.WATER_WOODEN_BUCKET, FILL_WITH_WATER);
+        CauldronBehavior.EMPTY_CAULDRON_BEHAVIOR.put(ItemInit.WATER_WOODEN_BUCKET, (state, world, pos, player, hand, stack) -> {
+            return fillBarrelWithWoodenBucket(world, pos, player, hand, stack, BlockInit.WOODEN_BARREL_WATER.getDefaultState().with(LeveledCauldronBlock.LEVEL, 3), SoundEvents.ITEM_BUCKET_EMPTY);
+        });
         EMPTY_BARREL_BEHAVIOR.put(Items.WATER_BUCKET, BARREL_FILL_WITH_WATER);
-        EMPTY_BARREL_BEHAVIOR.put(ItemInit.WATER_WOODEN_BUCKET, BARREL_FILL_WITH_WATER);
+        EMPTY_BARREL_BEHAVIOR.put(ItemInit.WATER_WOODEN_BUCKET, (state, world, pos, player, hand, stack) -> {
+            return fillBarrelWithWoodenBucket(world, pos, player, hand, stack, BlockInit.WOODEN_BARREL_WATER.getDefaultState().with(LeveledCauldronBlock.LEVEL, 3), SoundEvents.ITEM_BUCKET_EMPTY);
+        });
         EMPTY_BARREL_BEHAVIOR.put(Items.POTION, (state, world, pos, player, hand, stack) -> {
             if (PotionUtil.getPotion(stack) != Potions.WATER) {
                 return ActionResult.PASS;
@@ -204,5 +215,19 @@ public class BlockInit {
 
             return ActionResult.success(world.isClient);
         }
+    }
+
+    private static ActionResult fillBarrelWithWoodenBucket(World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack, BlockState state, SoundEvent soundEvent) {
+        if (!world.isClient) {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(ItemInit.WOODEN_BUCKET)));
+            player.incrementStat(Stats.FILL_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            world.setBlockState(pos, state);
+            world.playSound((PlayerEntity)null, pos, soundEvent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            world.emitGameEvent((Entity)null, GameEvent.FLUID_PLACE, pos);
+        }
+
+        return ActionResult.success(world.isClient);
     }
 }

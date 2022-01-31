@@ -2678,13 +2678,35 @@
             "above_bottom": 0
           },
           "false_at_and_above": {
-            "above_bottom": 5
+            "above_bottom": 11
           },
           "type": "minecraft:vertical_gradient"
         },
         "then_run": {
           "result_state": {
             "Name": "minecraft:bedrock"
+          },
+          "type": "minecraft:block"
+        },
+        "type": "minecraft:condition"
+      },
+      {
+        "if_true": {
+          "random_name": "minecraft:bedrock_floor",
+          "true_at_and_below": {
+            "above_bottom": 5
+          },
+          "false_at_and_above": {
+            "above_bottom": 20
+          },
+          "type": "minecraft:vertical_gradient"
+        },
+        "then_run": {
+          "result_state": {
+            "Properties": {
+              "axis": "y"
+            },
+            "Name": "minecraft:netherrack"
           },
           "type": "minecraft:block"
         },
@@ -2808,7 +2830,7 @@
                   {
                     "if_true": {
                       "biome_is": [
-                        "minecraft:swamp"
+                        "alkimicraft:shattered_lava_plains"
                       ],
                       "type": "minecraft:biome"
                     },
@@ -2845,7 +2867,7 @@
                               "Properties": {
                                 "level": "0"
                               },
-                              "Name": "minecraft:water"
+                              "Name": "minecraft:lava"
                             },
                             "type": "minecraft:block"
                           },
@@ -3160,63 +3182,6 @@
                 "then_run": {
                   "sequence": [
                     {
-                      "if_true": {
-                        "biome_is": [
-                          "minecraft:frozen_ocean",
-                          "minecraft:deep_frozen_ocean"
-                        ],
-                        "type": "minecraft:biome"
-                      },
-                      "then_run": {
-                        "if_true": {
-                          "type": "minecraft:hole"
-                        },
-                        "then_run": {
-                          "sequence": [
-                            {
-                              "if_true": {
-                                "offset": 0,
-                                "surface_depth_multiplier": 0,
-                                "add_stone_depth": false,
-                                "type": "minecraft:water"
-                              },
-                              "then_run": {
-                                "result_state": {
-                                  "Name": "minecraft:air"
-                                },
-                                "type": "minecraft:block"
-                              },
-                              "type": "minecraft:condition"
-                            },
-                            {
-                              "if_true": {
-                                "type": "minecraft:temperature"
-                              },
-                              "then_run": {
-                                "result_state": {
-                                  "Name": "minecraft:ice"
-                                },
-                                "type": "minecraft:block"
-                              },
-                              "type": "minecraft:condition"
-                            },
-                            {
-                              "result_state": {
-                                "Properties": {
-                                  "level": "0"
-                                },
-                                "Name": "minecraft:water"
-                              },
-                              "type": "minecraft:block"
-                            }
-                          ],
-                          "type": "minecraft:sequence"
-                        },
-                        "type": "minecraft:condition"
-                      },
-                      "type": "minecraft:condition"
-                    },
-                    {
                       "sequence": [
                         {
                           "if_true": {
@@ -3514,7 +3479,76 @@
                             {
                               "if_true": {
                                 "biome_is": [
-                                  "minecraft:warm_ocean",
+                                  "alkimicraft:shattered_lava_plains"
+                                ],
+                                "type": "minecraft:biome"
+                              },
+                              "then_run": {
+                                "if_true": {
+                                  "noise": "minecraft:surface",
+                                  "min_threshold": 0.12121212121212122,
+                                  "max_threshold": 1.7976931348623157E308,
+                                  "type": "minecraft:noise_threshold"
+                                },
+                                "then_run": {
+                                  "result_state": {
+                                    "Name": "minecraft:blackstone"
+                                  },
+                                  "type": "minecraft:block"
+                                },
+                                "type": "minecraft:condition"
+                              },
+                              "type": "minecraft:condition"
+                            },
+                            {
+                              "if_true": {
+                                "biome_is": [
+                                  "alkimicraft:shattered_lava_plains"
+                                ],
+                                "type": "minecraft:biome"
+                              },
+                              "then_run": {
+                                "if_true": {
+                                  "noise": "minecraft:gravel",
+                                  "min_threshold": -0.01,
+                                  "max_threshold": 0.01,
+                                  "type": "minecraft:noise_threshold"
+                                },
+                                "then_run": {
+                                  "sequence": [
+                                    {
+                                      "if_true": {
+                                        "offset": 0,
+                                        "add_surface_depth": false,
+                                        "add_surface_secondary_depth": false,
+                                        "surface_type": "ceiling",
+                                        "type": "minecraft:stone_depth"
+                                      },
+                                      "then_run": {
+                                        "result_state": {
+                                          "Name": "minecraft:gilded_blackstone"
+                                        },
+                                        "type": "minecraft:block"
+                                      },
+                                      "type": "minecraft:condition"
+                                    },
+                                    {
+                                      "result_state": {
+                                        "Name": "minecraft:gilded_blackstone"
+                                      },
+                                      "type": "minecraft:block"
+                                    }
+                                  ],
+                                  "type": "minecraft:sequence"
+                                },
+                                "type": "minecraft:condition"
+                              },
+                              "type": "minecraft:condition"
+                            },
+                            {
+                              "if_true": {
+                                "biome_is": [
+                                  "alkimicraft:dried_deep_ocean",
                                   "alkimicraft:barren_desert",
                                   "minecraft:beach",
                                   "minecraft:snowy_beach"
@@ -3578,6 +3612,42 @@
                                   {
                                     "result_state": {
                                       "Name": "minecraft:gravel"
+                                    },
+                                    "type": "minecraft:block"
+                                  }
+                                ],
+                                "type": "minecraft:sequence"
+                              },
+                              "type": "minecraft:condition"
+                            },
+                            {
+                              "if_true": {
+                                "biome_is": [
+                                  "alkimicraft:shattered_lava_plains"
+                                ],
+                                "type": "minecraft:biome"
+                              },
+                              "then_run": {
+                                "sequence": [
+                                  {
+                                    "if_true": {
+                                      "offset": 0,
+                                      "add_surface_depth": false,
+                                      "add_surface_secondary_depth": false,
+                                      "surface_type": "ceiling",
+                                      "type": "minecraft:stone_depth"
+                                    },
+                                    "then_run": {
+                                      "result_state": {
+                                        "Name": "minecraft:smooth_basalt"
+                                      },
+                                      "type": "minecraft:block"
+                                    },
+                                    "type": "minecraft:condition"
+                                  },
+                                  {
+                                    "result_state": {
+                                      "Name": "minecraft:smooth_basalt"
                                     },
                                     "type": "minecraft:block"
                                   }
@@ -3971,41 +4041,6 @@
                   {
                     "if_true": {
                       "offset": 0,
-                      "add_surface_depth": false,
-                      "add_surface_secondary_depth": false,
-                      "surface_type": "floor",
-                      "type": "minecraft:stone_depth"
-                    },
-                    "then_run": {
-                      "if_true": {
-                        "biome_is": [
-                          "minecraft:frozen_ocean",
-                          "minecraft:deep_frozen_ocean"
-                        ],
-                        "type": "minecraft:biome"
-                      },
-                      "then_run": {
-                        "if_true": {
-                          "type": "minecraft:hole"
-                        },
-                        "then_run": {
-                          "result_state": {
-                            "Properties": {
-                              "level": "0"
-                            },
-                            "Name": "minecraft:water"
-                          },
-                          "type": "minecraft:block"
-                        },
-                        "type": "minecraft:condition"
-                      },
-                      "type": "minecraft:condition"
-                    },
-                    "type": "minecraft:condition"
-                  },
-                  {
-                    "if_true": {
-                      "offset": 0,
                       "add_surface_depth": true,
                       "add_surface_secondary_depth": false,
                       "surface_type": "floor",
@@ -4116,6 +4151,36 @@
                                   "Name": "minecraft:snow_block"
                                 },
                                 "type": "minecraft:block"
+                              }
+                            ],
+                            "type": "minecraft:sequence"
+                          },
+                          "type": "minecraft:condition"
+                        },
+                        {
+                          "if_true": {
+                            "biome_is": [
+                              "alkimicraft:barren_desert",
+                              "alkimicraft:rocky_desert",
+                              "alkimicraft:salty_ocean",
+                              "alkimicraft:charred_forest",
+                              "alkimicraft:wind_erosion_land"
+                            ],
+                            "type": "minecraft:biome"
+                          },
+                          "then_run": {
+                            "sequence": [
+                              {
+                                "if_true": {
+                                  "type": "minecraft:steep"
+                                },
+                                "then_run": {
+                                  "result_state": {
+                                    "Name": "minecraft:stone"
+                                  },
+                                  "type": "minecraft:block"
+                                },
+                                "type": "minecraft:condition"
                               }
                             ],
                             "type": "minecraft:sequence"
@@ -4292,7 +4357,7 @@
                             {
                               "if_true": {
                                 "biome_is": [
-                                  "minecraft:warm_ocean",
+                                  "alkimicraft:salty_ocean",
                                   "alkimicraft:barren_desert",
                                   "minecraft:beach",
                                   "minecraft:snowy_beach"
@@ -4356,6 +4421,42 @@
                                   {
                                     "result_state": {
                                       "Name": "minecraft:gravel"
+                                    },
+                                    "type": "minecraft:block"
+                                  }
+                                ],
+                                "type": "minecraft:sequence"
+                              },
+                              "type": "minecraft:condition"
+                            },
+                            {
+                              "if_true": {
+                                "biome_is": [
+                                  "alkimicraft:shattered_lava_plains"
+                                ],
+                                "type": "minecraft:biome"
+                              },
+                              "then_run": {
+                                "sequence": [
+                                  {
+                                    "if_true": {
+                                      "offset": 0,
+                                      "add_surface_depth": false,
+                                      "add_surface_secondary_depth": false,
+                                      "surface_type": "ceiling",
+                                      "type": "minecraft:stone_depth"
+                                    },
+                                    "then_run": {
+                                      "result_state": {
+                                        "Name": "minecraft:smooth_basalt"
+                                      },
+                                      "type": "minecraft:block"
+                                    },
+                                    "type": "minecraft:condition"
+                                  },
+                                  {
+                                    "result_state": {
+                                      "Name": "minecraft:smooth_basalt"
                                     },
                                     "type": "minecraft:block"
                                   }
@@ -4527,7 +4628,7 @@
                   {
                     "if_true": {
                       "biome_is": [
-                        "minecraft:warm_ocean",
+                        "alkimicraft:salty_ocean",
                         "alkimicraft:barren_desert",
                         "minecraft:beach",
                         "minecraft:snowy_beach"
@@ -4611,9 +4712,8 @@
                   {
                     "if_true": {
                       "biome_is": [
-                        "minecraft:warm_ocean",
-                        "minecraft:lukewarm_ocean",
-                        "minecraft:deep_lukewarm_ocean"
+                        "alkimicraft:salty_ocean",
+                        "alkimicraft:dried_deep_ocean"
                       ],
                       "type": "minecraft:biome"
                     },
@@ -4690,7 +4790,7 @@
             "absolute": 0
           },
           "false_at_and_above": {
-            "absolute": 8
+            "absolute": 15
           },
           "type": "minecraft:vertical_gradient"
         },

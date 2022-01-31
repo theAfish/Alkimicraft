@@ -1,0 +1,133 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "alkimicraft:block/jujube_log_side"
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "alkimicraft:block/jujube_log_side",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "alkimicraft:block/jujube_log_side",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "alkimicraft:block/jujube_log_side",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": {
+        "model": "alkimicraft:block/jujube_log_side",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": "true"
+      },
+      "apply": {
+        "model": "alkimicraft:block/jujube_log_side",
+        "x": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "north": "false"
+      },
+      "apply": [
+        {
+          "model": "alkimicraft:block/jujube_log_noside"
+        }
+      ]
+    },
+    {
+      "when": {
+        "east": "false"
+      },
+      "apply": [
+        {
+          "model": "alkimicraft:block/jujube_log_noside",
+          "y": 90,
+          "uvlock": true
+        }
+      ]
+    },
+    {
+      "when": {
+        "south": "false"
+      },
+      "apply": [
+        {
+          "model": "alkimicraft:block/jujube_log_noside",
+          "y": 180,
+          "uvlock": true
+        }
+      ]
+    },
+    {
+      "when": {
+        "west": "false"
+      },
+      "apply": [
+        {
+          "model": "alkimicraft:block/jujube_log_noside",
+          "y": 270,
+          "uvlock": true
+        }
+      ]
+    },
+    {
+      "when": {
+        "up": "false"
+      },
+      "apply": [
+        {
+          "model": "alkimicraft:block/jujube_log_noside",
+          "weight": 2,
+          "x": 270,
+          "uvlock": true
+        }
+      ]
+    },
+    {
+      "when": {
+        "down": "false"
+      },
+      "apply": [
+        {
+          "model": "alkimicraft:block/jujube_log_noside",
+          "x": 90,
+          "uvlock": true
+        }
+      ]
+    }
+  ]
+}

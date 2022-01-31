@@ -27,6 +27,9 @@
   "item.alkimicraft.grass_seeds": "草籽",
   "grass_seeds.tooltip": "在某些土块上试试看！",
 
+  "item.alkimicraft.jujube": "枣",
+  "jujube.tooltips": "可食用，种植于砂质壤土上",
+
   "item.alkimicraft.toxic_sewage_bucket": "污水桶",
   "item.alkimicraft.wooden_bucket": "木桶",
   "item.alkimicraft.water_wooden_bucket": "盛水木桶",
@@ -35,6 +38,17 @@
   "item.alkimicraft.reed_sticks": "芦苇杆",
   "item.alkimicraft.fire_plough": "火犁",
   "item.alkimicraft.plant_ash": "草木灰",
+  "item.alkimicraft.the_dry_teleporter": "神秘立方体",
+  "the_dry_teleporter.tooltip1": "警告：",
+  "the_dry_teleporter.tooltip2": "此一次性物品能将你",
+  "the_dry_teleporter.tooltip21":"传送至另一时间点的",
+  "the_dry_teleporter.tooltip22":"相同位置，且无法返回",
+  "the_dry_teleporter.tooltip23":"（除非作弊或死亡）",
+  "the_dry_teleporter.tooltip24":"请慎重使用",
+  "the_dry_teleporter.tooltip3": "若想充分体验各类植物",
+  "the_dry_teleporter.tooltip31":"的功能，最好不携带任",
+  "the_dry_teleporter.tooltip32":"何物品直接使用该立方，",
+  "the_dry_teleporter.tooltip33":"在穿越后开始你的冒险",
 
 
   "block.alkimicraft.wooden_barrel": "木桶",
@@ -56,5 +70,6 @@
   "block.alkimicraft.charred_log": "焦木",
   "block.alkimicraft.sparse_grass_block": "稀疏草方块",
   "block.alkimicraft.porous_stone": "多孔石",
-  "block.alkimicraft.iron_cobblestone": "含铁圆石"
+  "block.alkimicraft.iron_cobblestone": "含铁圆石",
+  "block.alkimicraft.jujube_leaves": "枣树叶"
 }

@@ -16,7 +16,7 @@
   "pencil_plant_seeds.tooltips": "Plant on loamy sand",
 
   "item.alkimicraft.sea_buckthorn_fruits": "Sea Buckthorn Fruits",
-  "sea_buckthorn_fruits.tooltips": "Plant on sand or loamy sand",
+  "sea_buckthorn_fruits.tooltips": "Plant on sand or loamy sand. Edible",
 
   "item.alkimicraft.reed_seeds": "Reed Seeds",
   "reed_seeds.tooltips": "Plant under shallow water or sewage, purifying sewage while growing",
@@ -27,6 +27,9 @@
   "item.alkimicraft.grass_seeds": "Grass Seeds",
   "grass_seeds.tooltip": "Try using it on several soil blocks!",
 
+  "item.alkimicraft.jujube": "Jujube",
+  "jujube.tooltips": "Plant on sandy loam. Edible",
+
   "item.alkimicraft.toxic_sewage_bucket": "Toxic Sewage Bucket",
   "item.alkimicraft.wooden_bucket": "Wooden Bucket",
   "item.alkimicraft.water_wooden_bucket": "Wooden Bucket Contains Water",
@@ -35,7 +38,17 @@
   "item.alkimicraft.reed_sticks": "Reed Sticks",
   "item.alkimicraft.fire_plough": "Fire Plough",
   "item.alkimicraft.plant_ash": "Plant Ash",
-
+  "item.alkimicraft.the_dry_teleporter": "Mysterious Cube",
+  "the_dry_teleporter.tooltip1": "Warning:",
+  "the_dry_teleporter.tooltip2": "This one-time item can transport",
+  "the_dry_teleporter.tooltip21":"you to another point in spacetime",
+  "the_dry_teleporter.tooltip22":"with the same position and cannot",
+  "the_dry_teleporter.tooltip23":"be returned (unless cheating or death)",
+  "the_dry_teleporter.tooltip24":"Please use with caution",
+  "the_dry_teleporter.tooltip3": "To fully experience the effects of",
+  "the_dry_teleporter.tooltip31":"the various plants, it is best to",
+  "the_dry_teleporter.tooltip32":"use this cube directly without",
+  "the_dry_teleporter.tooltip33":"carrying any items.",
 
   "block.alkimicraft.wooden_barrel": "Wooden Barrel",
   "block.alkimicraft.wooden_barrel_water": "Wooden Barrel",
@@ -56,5 +69,7 @@
   "block.alkimicraft.charred_log": "Charred Log",
   "block.alkimicraft.sparse_grass_block": "Sparse Grass Block",
   "block.alkimicraft.porous_stone": "Porous Stone",
-  "block.alkimicraft.iron_cobblestone": "Iron Cobblestone"
+  "block.alkimicraft.iron_cobblestone": "Iron Cobblestone",
+  "block.alkimicraft.jujube_leaves": "Jujube Leaves"
+
 }

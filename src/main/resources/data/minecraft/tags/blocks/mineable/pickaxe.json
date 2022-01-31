@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "alkimicraft:porous_stone",
+    "alkimicraft:iron_cobblestone",
+    "alkimicraft:sedimentary_rock"
+  ]
+}

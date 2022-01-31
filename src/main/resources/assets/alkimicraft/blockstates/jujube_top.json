@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "bottom=true": {
+      "model": "alkimicraft:block/jujube_sapling"
+    },
+    "bottom=false": {
+      "model": "alkimicraft:block/jujube_leaves"
+    }
+  }
+}

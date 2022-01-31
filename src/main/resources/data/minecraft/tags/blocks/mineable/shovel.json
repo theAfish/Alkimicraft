@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "alkimicraft:barren_loam",
+    "alkimicraft:sandy_loam",
+    "alkimicraft:loamy_sand",
+    "alkimicraft:ash_block",
+    "alkimicraft:sparse_grass_block"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "alkimicraft:mixing_recipe",
+  "ingredients": [
+    {
+      "item": "alkimicraft:pencil_plant_planks"
+    }
+  ],
+  "level": 1,
+  "result": {
+    "item": "alkimicraft:detoxified_pencil_plant_planks",
+    "count": 1
+  }
+}

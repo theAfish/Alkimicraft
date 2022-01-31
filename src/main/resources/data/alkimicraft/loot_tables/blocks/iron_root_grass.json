@@ -7,6 +7,10 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "alkimicraft:iron_root_grass_seeds"
+        },
+        {
+          "type": "minecraft:item",
           "name": "alkimicraft:iron_root_grass_seeds",
           "functions": [
             {

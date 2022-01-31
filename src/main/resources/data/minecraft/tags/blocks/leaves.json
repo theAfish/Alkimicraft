@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values":[
-    "alkimicraft:desert_poplar_leaves"
+    "alkimicraft:desert_poplar_leaves",
+    "alkimicraft:jujube_leaves"
   ]
 }
