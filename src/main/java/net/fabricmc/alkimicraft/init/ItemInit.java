@@ -74,7 +74,18 @@ public class ItemInit {
     public static final Item WOODEN_BARREL = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"wooden_barrel"), new BlockItem(BlockInit.WOODEN_BARREL, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
     public static final Item THE_DRY_TELEPORTER = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"the_dry_teleporter"), new TheDryTeleporter(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item SMALL_GOLD_BUD = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"small_gold_bud"), new BlockItem(BlockInit.SMALL_GOLD_BUD, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item MEDIUM_GOLD_BUD = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"medium_gold_bud"), new BlockItem(BlockInit.MEDIUM_GOLD_BUD, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item LARGE_GOLD_BUD = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"large_gold_bud"), new BlockItem(BlockInit.LARGE_GOLD_BUD, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item GOLD_CLUSTER = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"gold_cluster"), new BlockItem(BlockInit.GOLD_CLUSTER, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item GOLD_ORE_DEPOSIT = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"gold_ore_deposit"), new BlockItem(BlockInit.GOLD_ORE_DEPOSIT, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
+    public static final Item COPPER_SHELL = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "copper_shell"), new Item(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item COPPER_NUGGET = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "copper_nugget"), new Item(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+
+
+    // Spawn eggs
+    public static final Item COPPOISE_SPAWN_EGG = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "coppoise_spawn_egg"), new SpawnEggItem(EntityInit.COPPOISE, 15172180, 5882659, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
     // Seeds
     public static final Item IRON_ROOT_GRASS_SEED = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "iron_root_grass_seeds"), new AliasedBlockItem(BlockInit.IRON_ROOT_GRASS,new Item.Settings().group(AlkimiCraft.SEEDS_GROUP)){
@@ -94,6 +105,9 @@ public class ItemInit {
     public static final Item GRASS_SEEDS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "grass_seeds"), new GrassSeeds(new Item.Settings().group(AlkimiCraft.SEEDS_GROUP)));
     public static final Item JUJUBE = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "jujube"), new AliasedBlockItem(BlockInit.JUJUBE_TOP, new Item.Settings().group(AlkimiCraft.SEEDS_GROUP).food(FoodComponents.APPLE)){
         @Override public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {tooltip.add( new TranslatableText("jujube.tooltips").formatted(Formatting.GREEN));}});
+    public static final Item COPPER_ELSHOLTZIA_SEEDS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "copper_elsholtzia_seeds"), new AliasedBlockItem(BlockInit.COPPER_ELSHOLTZIA, new Item.Settings().group(AlkimiCraft.SEEDS_GROUP)){
+        @Override public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {tooltip.add( new TranslatableText("copper_elsholtzia_seeds.tooltips").formatted(Formatting.GREEN));}});
+
 
     public static void init(){
 

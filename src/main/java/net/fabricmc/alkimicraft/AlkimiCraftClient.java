@@ -1,7 +1,9 @@
 package net.fabricmc.alkimicraft;
 
 import net.fabricmc.alkimicraft.blocks.entities.TipiFireEntity;
+import net.fabricmc.alkimicraft.client.model.CoppoiseEntityModel;
 import net.fabricmc.alkimicraft.client.model.StarryBodyEntityModel;
+import net.fabricmc.alkimicraft.client.renderer.CoppoiseEntityRenderer;
 import net.fabricmc.alkimicraft.client.renderer.StarryBodyEntityRenderer;
 import net.fabricmc.alkimicraft.client.renderer.block.entity.TipiFireEntityRenderer;
 import net.fabricmc.alkimicraft.init.BlockInit;
@@ -29,6 +31,7 @@ import net.minecraft.util.registry.Registry;
 public class AlkimiCraftClient implements ClientModInitializer {
 
     public static final EntityModelLayer MODEL_STARRY_BODY_LAYER = new EntityModelLayer(new Identifier(AlkimiCraft.MOD_ID, "starry_body"), "main");
+    public static final EntityModelLayer MODEL_COPPOISE_LAYER = new EntityModelLayer(new Identifier(AlkimiCraft.MOD_ID, "coppoise"), "main");
 
     @Override
     public void onInitializeClient() {
@@ -40,14 +43,12 @@ public class AlkimiCraftClient implements ClientModInitializer {
         ScreenRegistry.register(ScreenInit.WOODEN_BARREL_SCREEN_HANDLER, WoodenBarrelScreen::new);
 
 
-        EntityRendererRegistry.INSTANCE.register(EntityInit.STARRY_BODY, (context) -> {
-            return new StarryBodyEntityRenderer(context);
-        });
+        EntityRendererRegistry.INSTANCE.register(EntityInit.STARRY_BODY, StarryBodyEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(MODEL_STARRY_BODY_LAYER, StarryBodyEntityModel::getTexturedModelData);
 
-//        ClientPlayNetworking.registerGlobalReceiver(AlkimiCraft.TIPI_FIRE_DATA_PACKET, (client, handler, buf, responseSender)->{
-//
-//        });
+
+        EntityRendererRegistry.INSTANCE.register(EntityInit.COPPOISE, CoppoiseEntityRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(MODEL_COPPOISE_LAYER, CoppoiseEntityModel::getTexturedModelData);
 
     }
 

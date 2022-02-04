@@ -24,7 +24,7 @@
           "conditions": [
             {
               "condition": "minecraft:block_state_property",
-              "block": "alkimicraft:iron_root_grass",
+              "block": "alkimicraft:fertile_beans",
               "properties": {
                 "age": "6"
               }
@@ -33,7 +33,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "alkimicraft:iron_root_grass_seeds",
+          "name": "alkimicraft:fertile_beans_seeds",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -46,7 +46,7 @@
           "conditions": [
             {
               "condition": "minecraft:block_state_property",
-              "block": "alkimicraft:iron_root_grass",
+              "block": "alkimicraft:fertile_beans",
               "properties": {
                 "age": "7"
               }

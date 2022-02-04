@@ -96,7 +96,15 @@
     ],
     "water_creature": [],
     "water_ambient": [],
-    "misc": []
+    "misc": [],
+    "creature": [
+      {
+        "type": "alkimicraft:coppoise",
+        "weight": 12,
+        "minCount": 4,
+        "maxCount": 4
+      }
+    ]
   },
   "spawn_costs": {}
 }

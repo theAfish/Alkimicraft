@@ -29,6 +29,7 @@
 
   "item.alkimicraft.jujube": "Jujube",
   "jujube.tooltips": "Plant on sandy loam. Edible",
+  "item.alkimicraft.jujube_log": "Jujube Log",
 
   "item.alkimicraft.toxic_sewage_bucket": "Toxic Sewage Bucket",
   "item.alkimicraft.wooden_bucket": "Wooden Bucket",
@@ -50,6 +51,13 @@
   "the_dry_teleporter.tooltip32":"use this cube directly without",
   "the_dry_teleporter.tooltip33":"carrying any items.",
 
+  "item.alkimicraft.coppoise_spawn_egg": "Coppoise Spawn Egg",
+  "item.alkimicraft.copper_elsholtzia_seeds": "Copper Elsholtzia Seeds",
+  "copper_elsholtzia_seeds.tooltips": "Coppoise like it!",
+  "item.alkimicraft.copper_nugget": "Copper Nugget",
+  "item.alkimicraft.copper_shell": "Copper Shell",
+
+
   "block.alkimicraft.wooden_barrel": "Wooden Barrel",
   "block.alkimicraft.wooden_barrel_water": "Wooden Barrel",
   "block.alkimicraft.tipi_fire": "Tipi Fire",
@@ -61,6 +69,7 @@
   "block.alkimicraft.pencil_plant": "Pencil Plant",
   "item.alkimicraft.pencil_plant_log": "Pencil Plant Log",
   "block.alkimicraft.pencil_plant_planks": "Pencil Plant Planks",
+  "block.alkimicraft.detoxified_pencil_plant_planks": "Detoxified Pencil Plant Planks",
   "block.alkimicraft.loamy_sand": "Loamy Sand",
   "block.alkimicraft.sandy_loam": "Sandy Loam",
   "block.alkimicraft.barren_loam": "Barren Loam",
@@ -70,6 +79,10 @@
   "block.alkimicraft.sparse_grass_block": "Sparse Grass Block",
   "block.alkimicraft.porous_stone": "Porous Stone",
   "block.alkimicraft.iron_cobblestone": "Iron Cobblestone",
-  "block.alkimicraft.jujube_leaves": "Jujube Leaves"
-
+  "block.alkimicraft.jujube_leaves": "Jujube Leaves",
+  "block.alkimicraft.small_gold_bud": "Small Gold Dendrite",
+  "block.alkimicraft.medium_gold_bud": "Medium Gold Dendrite",
+  "block.alkimicraft.large_gold_bud": "Large Gold Dendrite",
+  "block.alkimicraft.gold_cluster": "Gold Cluster",
+  "block.alkimicraft.gold_ore_deposit": "Gold Ore Deposit"
 }

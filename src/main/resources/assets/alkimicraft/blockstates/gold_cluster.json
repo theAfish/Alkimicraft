@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "alkimicraft:block/gold_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "alkimicraft:block/gold_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "alkimicraft:block/gold_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "alkimicraft:block/gold_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "alkimicraft:block/gold_cluster"
+    },
+    "facing=west": {
+      "model": "alkimicraft:block/gold_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

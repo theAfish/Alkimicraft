@@ -96,6 +96,14 @@ public class BlockInit {
     public static final Block WOODEN_BARREL_WATER = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"wooden_barrel_water"), new LeveledBarrel(AbstractBlock.Settings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD), LeveledCauldronBlock.RAIN_PREDICATE, WATER_BARREL_BEHAVIOR));
     public static final Block WOODEN_BARREL_SEWAGE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"wooden_barrel_sewage"), new LeveledBarrel(AbstractBlock.Settings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD), LeveledCauldronBlock.RAIN_PREDICATE, WATER_BARREL_BEHAVIOR));
 
+    public static Block SMALL_GOLD_BUD = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"small_gold_bud"), new AmethystClusterBlock(3, 3, AbstractBlock.Settings.of(Material.METAL).strength(1.5f)));
+    public static Block MEDIUM_GOLD_BUD = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"medium_gold_bud"), new AmethystClusterBlock(4, 3, AbstractBlock.Settings.of(Material.METAL).strength(1.5f)));
+    public static Block LARGE_GOLD_BUD = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"large_gold_bud"), new AmethystClusterBlock(5, 3, AbstractBlock.Settings.of(Material.METAL).strength(1.5f)));
+    public static Block GOLD_CLUSTER = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"gold_cluster"), new AmethystClusterBlock(7, 4, AbstractBlock.Settings.of(Material.METAL).strength(1.5f)));
+    public static Block GOLD_ORE_DEPOSIT = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"gold_ore_deposit"), new BuddingOreBlock(AbstractBlock.Settings.of(Material.METAL).strength(1.5f).ticksRandomly(), SMALL_GOLD_BUD, MEDIUM_GOLD_BUD, LARGE_GOLD_BUD, GOLD_CLUSTER));
+
+    public static Block COPPER_ELSHOLTZIA = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"copper_elsholtzia"), new CopperElsholtzia(AbstractBlock.Settings.of(Material.PLANT).strength(0.2f).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().noCollision()));
+
 
 
 

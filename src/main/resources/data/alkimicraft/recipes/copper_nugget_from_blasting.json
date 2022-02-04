@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "alkimicraft:copper_shell"
+  },
+  "result": "alkimicraft:copper_nugget",
+  "experience": 0.2,
+  "cookingtime": 100
+}

@@ -123,12 +123,12 @@ public abstract class AbstractThinTreeTop extends Block {
 
     protected void grow(World world, BlockPos pos, int age) {
         world.setBlockState(pos, this.getDefaultState().with(AGE, age), 2);
-        world.syncWorldEvent(1033, pos, 0);
+//        world.syncWorldEvent(1033, pos, 0);
     }
 
     protected void die(World world, BlockPos pos) {
         world.setBlockState(pos, leaveBlock.getDefaultState(), 2);
-        world.syncWorldEvent(1034, pos, 0);
+//        world.syncWorldEvent(1034, pos, 0);
     }
 
     private boolean isSurroundedByAirOrLeave(WorldView world, BlockPos pos, @Nullable Direction exceptDirection) {

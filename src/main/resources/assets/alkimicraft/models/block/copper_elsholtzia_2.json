@@ -1,0 +1,7 @@
+{
+  "parent": "alkimicraft:block/flower_with_leaves",
+  "textures": {
+    "leaves": "alkimicraft:block/copper_elsholtzia_leaves_2",
+    "flower": "alkimicraft:block/copper_elsholtzia_flower_2"
+  }
+}

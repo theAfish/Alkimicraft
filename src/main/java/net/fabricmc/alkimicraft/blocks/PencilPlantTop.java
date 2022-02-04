@@ -119,12 +119,12 @@ public class PencilPlantTop extends Block {
 
     private void grow(World world, BlockPos pos, int age) {
         world.setBlockState(pos, this.getDefaultState().with(AGE, age), 2);
-        world.syncWorldEvent(1033, pos, 0);
+//        world.syncWorldEvent(1033, pos, 0);
     }
 
     private void die(World world, BlockPos pos) {
         world.setBlockState(pos, this.getDefaultState().with(AGE, 5), 2);
-        world.syncWorldEvent(1034, pos, 0);
+//        world.syncWorldEvent(1034, pos, 0);
     }
 
     private static boolean isSurroundedByAir(WorldView world, BlockPos pos, @Nullable Direction exceptDirection) {

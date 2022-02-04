@@ -27,6 +27,9 @@
   "item.alkimicraft.grass_seeds": "草籽",
   "grass_seeds.tooltip": "在某些土块上试试看！",
 
+  "item.alkimicraft.copper_elsholtzia_seeds": "铜草种子",
+  "copper_elsholtzia_seeds.tooltips": "深受铜龟子的喜爱",
+
   "item.alkimicraft.jujube": "枣",
   "jujube.tooltips": "可食用，种植于砂质壤土上",
 
@@ -50,6 +53,8 @@
   "the_dry_teleporter.tooltip32":"何物品直接使用该立方，",
   "the_dry_teleporter.tooltip33":"在穿越后开始你的冒险",
 
+  "item.alkimicraft.coppoise_spawn_egg": "铜龟子刷怪蛋",
+
 
   "block.alkimicraft.wooden_barrel": "木桶",
   "block.alkimicraft.wooden_barrel_water": "木桶",
@@ -71,5 +76,14 @@
   "block.alkimicraft.sparse_grass_block": "稀疏草方块",
   "block.alkimicraft.porous_stone": "多孔石",
   "block.alkimicraft.iron_cobblestone": "含铁圆石",
-  "block.alkimicraft.jujube_leaves": "枣树叶"
+  "block.alkimicraft.jujube_leaves": "枣树叶",
+  "block.alkimicraft.small_gold_bud": "小型金枝晶",
+  "block.alkimicraft.medium_gold_bud": "中型金枝晶",
+  "block.alkimicraft.large_gold_bud": "大型金枝晶",
+  "block.alkimicraft.gold_cluster": "金矿簇",
+  "block.alkimicraft.gold_ore_deposit": "金矿床",
+  "item.alkimicraft.jujube_log": "枣树原木",
+  "block.alkimicraft.detoxified_pencil_plant_planks": "脱毒绿玉树木板",
+  "item.alkimicraft.copper_nugget": "铜粒",
+  "item.alkimicraft.copper_shell": "铜壳"
 }

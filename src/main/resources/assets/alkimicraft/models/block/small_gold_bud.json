@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "alkimicraft:block/small_gold_bud"
+  }
+}

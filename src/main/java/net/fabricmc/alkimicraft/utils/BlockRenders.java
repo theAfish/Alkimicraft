@@ -48,6 +48,15 @@ public class BlockRenders {
 //        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.WOODEN_BARREL_SEWAGE, RenderLayer.getTranslucent());
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0xB98747, BlockInit.WOODEN_BARREL_SEWAGE);
 
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SMALL_GOLD_BUD, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.MEDIUM_GOLD_BUD, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.LARGE_GOLD_BUD, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.GOLD_CLUSTER, RenderLayer.getCutoutMipped());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.COPPER_ELSHOLTZIA, RenderLayer.getCutoutMipped());
+        ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0xFFFFFF, BlockInit.COPPER_ELSHOLTZIA);
+
+
 
     }
 }
