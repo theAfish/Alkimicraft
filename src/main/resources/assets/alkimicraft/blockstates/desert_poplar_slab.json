@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "alkimicraft:block/desert_poplar_slab"
+    },
+    "type=double": {
+      "model": "alkimicraft:block/desert_poplar_planks"
+    },
+    "type=top": {
+      "model": "alkimicraft:block/desert_poplar_slab_top"
+    }
+  }
+}

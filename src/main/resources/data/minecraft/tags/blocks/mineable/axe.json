@@ -2,10 +2,29 @@
   "replace": false,
   "values": [
     "alkimicraft:jujube_log",
+    "alkimicraft:jujube_planks",
+    "alkimicraft:jujube_stairs",
+    "alkimicraft:jujube_slab",
+
     "alkimicraft:desert_poplar_log",
-    "alkimicraft:pencil_plant",
+    "alkimicraft:stripped_desert_poplar_log",
     "alkimicraft:desert_poplar_planks",
+    "alkimicraft:desert_poplar_stairs",
+    "alkimicraft:desert_poplar_slab",
+    "alkimicraft:desert_poplar_fence",
+    "alkimicraft:desert_poplar_fence_gate",
+    "alkimicraft:desert_poplar_button",
+    "alkimicraft:desert_poplar_door",
+    "alkimicraft:desert_poplar_trapdoor",
+    "alkimicraft:desert_poplar_pressure_plate",
+
+
+    "alkimicraft:pencil_plant",
     "alkimicraft:pencil_plant_planks",
+    "alkimicraft:detoxified_pencil_plant_planks",
+    "alkimicraft:detoxified_pencil_plant_slab",
+    "alkimicraft:detoxified_pencil_plant_stairs",
+
     "alkimicraft:wooden_barrel",
     "alkimicraft:wooden_barrel_water",
     "alkimicraft:packing_table",

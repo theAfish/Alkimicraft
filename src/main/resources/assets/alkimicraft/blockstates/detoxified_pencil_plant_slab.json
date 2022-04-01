@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "alkimicraft:block/detoxified_pencil_plant_slab"
+    },
+    "type=double": {
+      "model": "alkimicraft:block/detoxified_pencil_plant_planks"
+    },
+    "type=top": {
+      "model": "alkimicraft:block/detoxified_pencil_plant_slab_top"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.10-SNAPSHOT'
+	id 'fabric-loom' version '0.11-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -16,15 +16,19 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+	maven { url 'https://maven.blamejared.com' }
+	maven { url = 'https://maven.minecraftforge.net/' }
 }
 
 dependencies {
-	minecraft "com.mojang:minecraft:1.18.1"
-	mappings "net.fabricmc:yarn:1.18.1+build.2:v2"
-	modImplementation "net.fabricmc:fabric-loader:0.12.11"
+	minecraft "com.mojang:minecraft:1.18.2"
+	mappings "net.fabricmc:yarn:1.18.2+build.2"
+//	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:0.13.3"
 
 	//Fabric api
-	modImplementation "net.fabricmc.fabric-api:fabric-api:0.44.0+1.18"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:0.48.0+1.18.2"
+	modImplementation "vazkii.patchouli:Patchouli:1.18.1-65-FABRIC"
 }
 
 processResources {

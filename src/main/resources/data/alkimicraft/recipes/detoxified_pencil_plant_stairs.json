@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "alkimicraft:detoxified_pencil_plant_planks"
+    }
+  },
+  "result": {
+    "item": "alkimicraft:detoxified_pencil_plant_stairs",
+    "count": 6
+  }
+}

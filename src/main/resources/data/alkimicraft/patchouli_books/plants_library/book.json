@@ -1,0 +1,8 @@
+{
+  "name": "The Plants Library",
+  "landing_text": "LANDING TEXT",
+  "version": 0,
+  "show_progress": false,
+  "subtitle": "Seed Vault for Doomsday",
+  "creative_tab": "alkimicraft.item_group"
+}

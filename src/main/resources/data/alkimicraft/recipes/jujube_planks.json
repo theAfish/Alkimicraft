@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "alkimicraft:jujube_log"
+    }
+  ],
+  "result": {
+    "item": "alkimicraft:jujube_planks",
+    "count": 1
+  }
+}

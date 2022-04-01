@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "alkimicraft:block/desert_poplar_planks",
+    "top": "alkimicraft:block/desert_poplar_planks",
+    "side": "alkimicraft:block/desert_poplar_planks"
+  }
+}

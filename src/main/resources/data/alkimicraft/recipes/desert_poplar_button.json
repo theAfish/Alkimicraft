@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "alkimicraft:desert_poplar_planks"
+    }
+  ],
+  "result": {
+    "item": "alkimicraft:desert_poplar_button",
+    "count": 1
+  }
+}

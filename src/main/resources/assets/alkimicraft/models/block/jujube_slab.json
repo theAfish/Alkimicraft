@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "alkimicraft:block/jujube_planks",
+    "top": "alkimicraft:block/jujube_planks",
+    "side": "alkimicraft:block/jujube_planks"
+  }
+}

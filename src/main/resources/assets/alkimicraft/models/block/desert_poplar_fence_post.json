@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "alkimicraft:block/stripped_desert_poplar_log"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "alkimicraft:block/jujube_slab"
+    },
+    "type=double": {
+      "model": "alkimicraft:block/jujube_planks"
+    },
+    "type=top": {
+      "model": "alkimicraft:block/jujube_slab_top"
+    }
+  }
+}

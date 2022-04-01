@@ -8,8 +8,7 @@
     "BucketItemMixin",
     "FenceMixin",
     "FlowableFluidMixin",
-    "MixinBlockEntity",
-    "MixinGeneratorOptions"
+    "MixinBlockEntity"
   ],
   "client": [
     "ClientPlayNetworkHandlerMixin",
