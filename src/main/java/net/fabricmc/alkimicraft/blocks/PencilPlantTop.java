@@ -166,7 +166,7 @@ public class PencilPlantTop extends Block {
 
     private static void generate(WorldAccess world, BlockPos pos, Random random, BlockPos rootPos, int size, int layer) {
         PencilPlant pencilPlant = (PencilPlant)BlockInit.PENCIL_PLANT;
-        int i = random.nextInt(4) + 1;
+        int i = random.nextInt(2) + 1;
         if (layer == 0) {
             ++i;
         }
@@ -182,8 +182,8 @@ public class PencilPlantTop extends Block {
         }
 
         boolean j = false;
-        if (layer < 4) {
-            int blockPos = random.nextInt(4);
+        if (layer < 2) {
+            int blockPos = random.nextInt(3);
             if (layer == 0) {
                 ++blockPos;
             }

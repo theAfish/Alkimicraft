@@ -1,0 +1,16 @@
+{
+  "criteria": {
+    "example": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "from": "minecraft:overworld",
+        "to": "alkimicraft:the_dry"
+      }
+    }
+  },
+  "rewards": {
+    "loot": [
+      "alkimicraft:grant_book_on_first_join"
+    ]
+  }
+}

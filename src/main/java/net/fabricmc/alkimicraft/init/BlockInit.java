@@ -4,6 +4,9 @@ import net.fabricmc.alkimicraft.AlkimiCraft;
 import net.fabricmc.alkimicraft.blocks.*;
 import net.fabricmc.alkimicraft.structures.trees.DesertPoplarSaplingGenerator;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.block.sapling.OakSaplingGenerator;
@@ -73,19 +76,33 @@ public class BlockInit {
 
     public static Block DESERT_POPLAR_LEAVES = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_leaves"), createLeavesBlock(BlockSoundGroup.GRASS));
     public static Block DESERT_POPLAR_LOG = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_log"), createLogBlock(MapColor.OAK_TAN, MapColor.SPRUCE_BROWN));
+    public static Block STRIPPED_DESERT_POPLAR_LOG = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"stripped_desert_poplar_log"), createLogBlock(MapColor.OAK_TAN, MapColor.YELLOW));
     public static Block DESERT_POPLAR_SAPLING = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "desert_poplar_sapling"), new DesertPoplarSaplingBlock(new DesertPoplarSaplingGenerator(), AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS)));
     public static Block DESERT_POPLAR_PLANKS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_planks"), new Block(AbstractBlock.Settings.of(Material.WOOD).strength(1f).sounds(BlockSoundGroup.WOOD)));
+    public static Block DESERT_POPLAR_STAIRS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "desert_poplar_stairs"), new StairsBlock(DESERT_POPLAR_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OAK_STAIRS)){});
+    public static Block DESERT_POPLAR_SLAB = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "desert_poplar_slab"), new SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_SLAB)));
+    public static Block DESERT_POPLAR_FENCE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "desert_poplar_fence"), new FenceBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE)));
+    public static Block DESERT_POPLAR_FENCE_GATE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "desert_poplar_fence_gate"), new FenceGateBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE)));
+    public static Block DESERT_POPLAR_BUTTON = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "desert_poplar_button"), new WoodenButtonBlock(AbstractBlock.Settings.copy(Blocks.OAK_BUTTON)){});
+    public static Block DESERT_POPLAR_PRESSURE_PLATE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "desert_poplar_pressure_plate"), new PressurePlateBlock(PressurePlateBlock.ActivationRule.MOBS, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE)){});
+    public static Block DESERT_POPLAR_TRAPDOOR = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "desert_poplar_trapdoor"), new TrapdoorBlock(AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR)){});
+    public static Block DESERT_POPLAR_DOOR = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "desert_poplar_door"), new DoorBlock(AbstractBlock.Settings.copy(Blocks.OAK_DOOR)){});
+
 
     public static Block JUJUBE_LEAVES = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"jujube_leaves"), createLeavesBlock(BlockSoundGroup.GRASS));
     public static JujubeLog JUJUBE_LOG = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"jujube_log"), new JujubeLog(AbstractBlock.Settings.of(Material.WOOD).strength(0.5F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
-    public static Block JUJUBE_TOP = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "jujube_top"), new JujubeTreeTop(AbstractBlock.Settings.of(Material.PLANT).ticksRandomly().strength(0.4F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
-
+    public static JujubeTreeTop JUJUBE_TOP = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "jujube_top"), new JujubeTreeTop(AbstractBlock.Settings.of(Material.PLANT).ticksRandomly().strength(0.4F).sounds(BlockSoundGroup.WOOD).nonOpaque().noCollision()));
+    public static Block JUJUBE_PLANKS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"jujube_planks"), new Block(AbstractBlock.Settings.of(Material.WOOD).strength(1f).sounds(BlockSoundGroup.WOOD)));
+    public static Block JUJUBE_STAIRS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "jujube_stairs"), new StairsBlock(JUJUBE_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OAK_STAIRS)){});
+    public static Block JUJUBE_SLAB = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "jujube_slab"), new SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_SLAB)));
 
     public static Block SEA_BUCKTHORN = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "sea_buckthorn"), new SeaBuckthorn(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().sounds(BlockSoundGroup.CROP).nonOpaque()));
     public static Block PENCIL_PLANT = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"pencil_plant"), new PencilPlant(AbstractBlock.Settings.of(Material.WOOD).strength(0.4F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
     public static Block PENCIL_PLANT_TOP = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "pencil_plant_top"), new PencilPlantTop((PencilPlant) PENCIL_PLANT, AbstractBlock.Settings.of(Material.PLANT).ticksRandomly().strength(0.4F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
     public static Block PENCIL_PLANT_PLANKS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"pencil_plant_planks"), new PencilPlantPlanks(AbstractBlock.Settings.of(Material.WOOD).strength(1f).sounds(BlockSoundGroup.WOOD)));
     public static Block DETOXIFIED_PENCIL_PLANT_PLANKS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"detoxified_pencil_plant_planks"), new Block(AbstractBlock.Settings.of(Material.WOOD).strength(1f).sounds(BlockSoundGroup.WOOD)));
+    public static Block DETOXIFIED_PENCIL_PLANT_STAIRS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"detoxified_pencil_plant_stairs"), new StairsBlock(DETOXIFIED_PENCIL_PLANT_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OAK_STAIRS)){});
+    public static Block DETOXIFIED_PENCIL_PLANT_SLAB = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"detoxified_pencil_plant_slab"), new SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_SLAB)));
 
 
     public static Block TIPI_FIRE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "tipi_fire"), new TipiFire(true, 1, AbstractBlock.Settings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD).luminance(createLightLevelFromLitBlockState(10)).nonOpaque()));
@@ -106,9 +123,40 @@ public class BlockInit {
 
 
 
-
     public static void init(){
         initializeCauldron();
+        addFlammables();
+        addStrippedLogs();
+    }
+
+    private static void addFlammables(){
+        FlammableBlockRegistry fbr = FlammableBlockRegistry.getDefaultInstance();
+        fbr.add(DESERT_POPLAR_LOG, 5, 5);
+        fbr.add(DESERT_POPLAR_LEAVES, 5, 5);
+        fbr.add(STRIPPED_DESERT_POPLAR_LOG, 5, 5);
+        fbr.add(DESERT_POPLAR_PLANKS, 5, 5);
+        fbr.add(DESERT_POPLAR_STAIRS, 5, 5);
+        fbr.add(DESERT_POPLAR_SLAB, 5, 5);
+
+        fbr.add(JUJUBE_LEAVES, 5, 5);
+        fbr.add(JUJUBE_LOG, 5, 5);
+        fbr.add(JUJUBE_PLANKS, 5, 5);
+        fbr.add(JUJUBE_SLAB, 5, 5);
+        fbr.add(JUJUBE_STAIRS, 5, 5);
+
+        fbr.add(PENCIL_PLANT_PLANKS, 10, 10);
+        fbr.add(PENCIL_PLANT, 10, 5);
+        fbr.add(DETOXIFIED_PENCIL_PLANT_PLANKS, 5, 5);
+        fbr.add(DETOXIFIED_PENCIL_PLANT_STAIRS, 5, 5);
+        fbr.add(DETOXIFIED_PENCIL_PLANT_SLAB, 5, 5);
+
+
+        fbr.add(PACKED_STICKS, 5, 5);
+
+    }
+
+    private static void addStrippedLogs(){
+        StrippableBlockRegistry.register(DESERT_POPLAR_LOG, STRIPPED_DESERT_POPLAR_LOG);
     }
 
     private static ToIntFunction<BlockState> createLightLevelFromLitBlockState(int litLevel) {

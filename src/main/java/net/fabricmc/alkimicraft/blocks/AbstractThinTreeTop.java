@@ -1,5 +1,6 @@
 package net.fabricmc.alkimicraft.blocks;
 
+import net.fabricmc.alkimicraft.init.BlockInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -9,6 +10,7 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
@@ -27,7 +29,6 @@ public abstract class AbstractThinTreeTop extends Block {
     private final ThinTreeLog logBlock;
     private final Block leaveBlock;
     private final Block soilBlock;
-    private static final VoxelShape SHAPE;
 
     public AbstractThinTreeTop(ThinTreeLog plantBlock, Block leaveBlock, Block soilBlock, Settings settings) {
         super(settings);
@@ -41,13 +42,7 @@ public abstract class AbstractThinTreeTop extends Block {
         if (!state.canPlaceAt(world, pos)) {
             world.breakBlock(pos, true);
         }
-
     }
-
-//    @Override
-//    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-//        return SHAPE;
-//    }
 
     public boolean hasRandomTicks(BlockState state) {
         return state.get(AGE) < 5;
@@ -62,7 +57,7 @@ public abstract class AbstractThinTreeTop extends Block {
                 boolean bl2 = false;
                 BlockState blockState = world.getBlockState(pos.down());
                 int j;
-                if (blockState.isOf(this.soilBlock)) {
+                if (canGrowOn(blockState)) {
                     bl = true;
                 } else if (blockState.isOf(this.logBlock)) {
                     j = 1;
@@ -70,7 +65,7 @@ public abstract class AbstractThinTreeTop extends Block {
                     for(int k = 0; k < 4; ++k) {
                         BlockState blockState2 = world.getBlockState(pos.down(j + 1));
                         if (!blockState2.isOf(this.logBlock)) {
-                            if (blockState2.isOf(this.soilBlock)) {
+                            if (canGrowOn(blockState2)) {
                                 bl2 = true;
                             }
                             break;
@@ -88,7 +83,7 @@ public abstract class AbstractThinTreeTop extends Block {
                 if (bl && isSurroundedByAirOrLeave(world, blockPos, (Direction)null) && world.isAir(pos.up(2))) {
                     world.setBlockState(pos, this.logBlock.withConnectionProperties(world, pos), 2);
                     this.grow(world, blockPos, i);
-                    if (i >= 2) this.growLeaves(world, blockPos.down());
+                    if (i >= 2) growLeaves(world, blockPos.down());
                 } else if (i < 4) {
                     j = random.nextInt(4);
                     if (bl2) {
@@ -102,7 +97,7 @@ public abstract class AbstractThinTreeTop extends Block {
                         BlockPos blockPos2 = pos.offset(direction);
                         if ((world.isAir(blockPos2) ||world.getBlockState(blockPos2).isOf(this.leaveBlock)) && (world.isAir(blockPos2.down())||world.getBlockState(blockPos2.down()).isOf(this.leaveBlock)) && isSurroundedByAirOrLeave(world, blockPos2, direction.getOpposite())) {
                             this.grow(world, blockPos2.up(), i + 2);
-                            this.growLeaves(world, blockPos2);
+                            growLeaves(world, blockPos2);
                             world.setBlockState(blockPos2, this.logBlock.withConnectionProperties(world, blockPos2), 2);
                             k = true;
                         }
@@ -119,6 +114,10 @@ public abstract class AbstractThinTreeTop extends Block {
 
             }
         }
+    }
+
+    public boolean canGrowOn(BlockState blockState){
+        return blockState.isOf(this.soilBlock);
     }
 
     protected void grow(World world, BlockPos pos, int age) {
@@ -141,18 +140,18 @@ public abstract class AbstractThinTreeTop extends Block {
             }
 
             direction = var3.next();
-        } while(direction == exceptDirection || world.isAir(pos.offset(direction)) || world.getBlockState(pos.offset(direction)).isOf(this.leaveBlock));
+        } while(direction == exceptDirection || world.isAir(pos.offset(direction)) || world.getBlockState(pos.offset(direction)).isIn(BlockTags.LEAVES));
 
         return false;
     }
 
-    private void growLeaves(World world, BlockPos pos){
+    private void growLeaves(WorldAccess world, BlockPos pos){
         Iterator<Direction> nswe = Direction.Type.HORIZONTAL.iterator();
         Direction direction;
         while (nswe.hasNext()){
             direction = nswe.next();
             if (world.isAir(pos.offset(direction))){
-                world.setBlockState(pos.offset(direction), this.leaveBlock.getDefaultState().with(Properties.DISTANCE_1_7, 1));
+                world.setBlockState(pos.offset(direction), leaveBlock.getDefaultState(), 2);
             }
         }
 
@@ -175,12 +174,12 @@ public abstract class AbstractThinTreeTop extends Block {
         builder.add(AGE);
     }
 
-    public void generate(WorldAccess world, BlockPos pos, Random random, int size) {
-        world.setBlockState(pos, (this.logBlock).withConnectionProperties(world, pos), 2);
-        generate(world, pos, random, pos, size, 0);
+    public void generate(WorldAccess world, BlockPos pos, Random random, int size, ThinTreeLog logBlock, Block leaveBlock) {
+        world.setBlockState(pos, (logBlock).withConnectionProperties(world, pos), 2);
+        generate(world, pos, random, pos, size, 0, logBlock, leaveBlock);
     }
 
-    private void generate(WorldAccess world, BlockPos pos, Random random, BlockPos rootPos, int size, int layer) {
+    void generate(WorldAccess world, BlockPos pos, Random random, BlockPos rootPos, int size, int layer, ThinTreeLog logBlock, Block leaveBlock) {
         int i = random.nextInt(4) + 1;
         if (layer == 0) {
             ++i;
@@ -188,12 +187,12 @@ public abstract class AbstractThinTreeTop extends Block {
 
         for(int j = 0; j < i; ++j) {
             BlockPos blockPos = pos.up(j + 1);
-            if (!isSurroundedByAirOrLeave(world, blockPos, (Direction)null)) {
+            if (!isSurroundedByAirOrLeave(world, blockPos, null)) {
                 return;
             }
-
-            world.setBlockState(blockPos, this.logBlock.withConnectionProperties(world, blockPos), 2);
-            world.setBlockState(blockPos.down(), this.logBlock.withConnectionProperties(world, blockPos.down()), 2);
+            if (j >= 2) growLeaves(world, blockPos);
+            world.setBlockState(blockPos, logBlock.withConnectionProperties(world, blockPos), 2);
+            world.setBlockState(blockPos.down(), logBlock.withConnectionProperties(world, blockPos.down()), 2);
         }
 
         boolean j = false;
@@ -208,21 +207,22 @@ public abstract class AbstractThinTreeTop extends Block {
                 BlockPos blockPos2 = pos.up(i).offset(direction);
                 if (Math.abs(blockPos2.getX() - rootPos.getX()) < size && Math.abs(blockPos2.getZ() - rootPos.getZ()) < size && world.isAir(blockPos2) && world.isAir(blockPos2.down()) && isSurroundedByAirOrLeave(world, blockPos2, direction.getOpposite())) {
                     j = true;
-                    world.setBlockState(blockPos2, this.logBlock.withConnectionProperties(world, blockPos2), 2);
-                    world.setBlockState(blockPos2.offset(direction.getOpposite()),this.logBlock.withConnectionProperties(world, blockPos2.offset(direction.getOpposite())), 2);
-                    generate(world, blockPos2, random, rootPos, size, layer + 1);
+                    growLeaves(world, blockPos2);
+                    world.setBlockState(blockPos2, logBlock.withConnectionProperties(world, blockPos2), 2);
+                    growLeaves(world, blockPos2.offset(direction.getOpposite()));
+                    world.setBlockState(blockPos2.offset(direction.getOpposite()),logBlock.withConnectionProperties(world, blockPos2.offset(direction.getOpposite())), 2);
+                    generate(world, blockPos2, random, rootPos, size, layer + 1, logBlock, leaveBlock);
                 }
             }
         }
 
         if (!j) {
-            world.setBlockState(pos.up(i), this.getDefaultState().with(AGE, 5), 2);
+            world.setBlockState(pos.up(i), leaveBlock.getDefaultState(), 2);
         }
 
     }
 
     static {
         AGE = Properties.AGE_5;
-        SHAPE = Block.createCuboidShape(4.0D, 0.0D, 4.0D, 12.0D, 12.0D, 12.0D);
     }
 }

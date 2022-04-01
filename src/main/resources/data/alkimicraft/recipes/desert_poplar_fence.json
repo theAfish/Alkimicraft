@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#i#",
+    "#i#"
+  ],
+  "key": {
+    "#": {
+      "item": "alkimicraft:desert_poplar_planks"
+    },
+    "i": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "alkimicraft:desert_poplar_fence",
+    "count": 3
+  }
+}

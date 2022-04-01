@@ -4,40 +4,34 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.fabricmc.alkimicraft.init.*;
 import net.fabricmc.alkimicraft.init.tags.TagsInit;
+import net.fabricmc.alkimicraft.world.biomes.POBiomes;
 import net.fabricmc.alkimicraft.world.chunk.DryChunkGenerator;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.dimension.v1.FabricDimensions;
-import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.LeveledCauldronBlock;
-import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.command.CommandException;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.LiteralText;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.EntityList;
 import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.*;
 import net.minecraft.world.dimension.DimensionOptions;
 import net.minecraft.world.dimension.DimensionType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 import java.lang.module.Configuration;
@@ -47,6 +41,8 @@ import static net.minecraft.server.command.CommandManager.literal;
 
 
 public class AlkimiCraft implements ModInitializer {
+	private static final Logger LOGGER = LoggerFactory.getLogger(AlkimiCraft.class);
+
 	public static final String MOD_ID = "alkimicraft";
 	public static ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "item_group"),
 			() -> new ItemStack(ItemInit.TIPI_FIRE));
@@ -57,6 +53,9 @@ public class AlkimiCraft implements ModInitializer {
 	private static final RegistryKey<DimensionOptions> DIMENSION_KEY = RegistryKey.of(Registry.DIMENSION_KEY, new Identifier(MOD_ID, "the_dry"));
 	public static RegistryKey<World> WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, DIMENSION_KEY.getValue());
 	private static final RegistryKey<DimensionType> DIMENSION_TYPE_KEY = RegistryKey.of(Registry.DIMENSION_TYPE_KEY, new Identifier(MOD_ID, "the_dry"));
+
+	// Biomes
+
 
 	@Override
 	public void onInitialize() {
@@ -72,6 +71,8 @@ public class AlkimiCraft implements ModInitializer {
 		EntityInit.init();
 		TagsInit.init();
 		ScreenInit.init();
+		POBiomes.init();
+		LootTableInit.init();
 
 
 		// Dimensions

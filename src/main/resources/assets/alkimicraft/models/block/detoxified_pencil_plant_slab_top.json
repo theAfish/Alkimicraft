@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "alkimicraft:block/detoxified_pencil_plant_planks",
+    "top": "alkimicraft:block/detoxified_pencil_plant_planks",
+    "side": "alkimicraft:block/detoxified_pencil_plant_planks"
+  }
+}

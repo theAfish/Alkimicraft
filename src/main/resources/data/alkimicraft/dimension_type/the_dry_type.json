@@ -6,7 +6,7 @@
   "ambient_light": 0.01,
   "has_skylight": true,
   "has_ceiling": false,
-  "infiniburn": "minecraft:infiniburn_overworld",
+  "infiniburn": "#minecraft:infiniburn_overworld",
   "effects": "minecraft:overworld",
   "logical_height" : 384,
   "has_raids" : true,

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "alkimicraft:block/desert_poplar_planks"
+  }
+}

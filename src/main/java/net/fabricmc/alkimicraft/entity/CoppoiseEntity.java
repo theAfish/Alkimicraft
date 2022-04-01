@@ -39,6 +39,11 @@ public class CoppoiseEntity extends AnimalEntity {
 
     }
 
+    @Override
+    public boolean canSpawn(WorldView world) {
+        return super.canSpawn(world);
+    }
+
     public boolean isBreedingItem(ItemStack stack) {
         return stack.isOf(ItemInit.COPPER_ELSHOLTZIA_SEEDS);
     }
@@ -133,7 +138,7 @@ public class CoppoiseEntity extends AnimalEntity {
             return blockState.isOf(BlockInit.COPPER_ELSHOLTZIA) && blockState.get(CropBlock.AGE) >= 6;
         }
 
-        public double getDesiredSquaredDistanceToTarget() {
+        public double getDesiredDistanceToTarget() {
             return 2.0D;
         }
 

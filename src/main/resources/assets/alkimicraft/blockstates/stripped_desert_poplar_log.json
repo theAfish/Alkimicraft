@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "alkimicraft:block/stripped_desert_poplar_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "alkimicraft:block/stripped_desert_poplar_log"
+    },
+    "axis=z": {
+      "model": "alkimicraft:block/stripped_desert_poplar_log",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "alkimicraft:jujube_planks"
+    }
+  },
+  "result": {
+    "item": "alkimicraft:jujube_stairs",
+    "count": 6
+  }
+}

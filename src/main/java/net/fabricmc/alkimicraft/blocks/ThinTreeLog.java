@@ -67,7 +67,7 @@ public class ThinTreeLog extends ConnectingBlock {
             BlockState blockState2;
             do {
                 if (!var6.hasNext()) {
-                    return blockState.isOf(this) || blockState.isOf(this.soilBlock);
+                    return blockState.isOf(this) || canGrowOn(blockState);
                 }
 
                 Direction direction = (Direction)var6.next();
@@ -80,9 +80,13 @@ public class ThinTreeLog extends ConnectingBlock {
 //            }
 
             blockState3 = world.getBlockState(blockPos.down());
-        } while(!blockState3.isOf(this) && !blockState3.isOf(this.soilBlock));
+        } while(!blockState3.isOf(this) && !canGrowOn(blockState3));
 
         return true;
+    }
+
+    public Boolean canGrowOn(BlockState blockState){
+        return blockState.isOf(soilBlock);
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {

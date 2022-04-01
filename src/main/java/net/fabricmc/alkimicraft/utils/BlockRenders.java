@@ -30,7 +30,7 @@ public class BlockRenders {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SEA_BUCKTHORN, RenderLayer.getCutoutMipped());
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.DESERT_POPLAR_LEAVES, RenderLayer.getCutoutMipped());
-        ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0xC8FF46, BlockInit.DESERT_POPLAR_LEAVES);
+        ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0xFFD21B, BlockInit.DESERT_POPLAR_LEAVES);
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.JUJUBE_LEAVES, RenderLayer.getCutoutMipped());
 //        ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0x64D007, BlockInit.JUJUBE_LEAVES);

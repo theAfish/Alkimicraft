@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values":[
-    "alkimicraft:desert_poplar_log"
+    "alkimicraft:desert_poplar_log",
+    "alkimicraft:stripped_desert_poplar_log",
+    "alkimicraft:jujube_log",
+    "alkimicraft:pencil_plant"
   ]
 }

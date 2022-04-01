@@ -1,7 +1,9 @@
 package net.fabricmc.alkimicraft.init;
 
 import net.fabricmc.alkimicraft.AlkimiCraft;
+import net.fabricmc.alkimicraft.blocks.PackingTableBlock;
 import net.fabricmc.alkimicraft.items.*;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
@@ -48,13 +50,26 @@ public class ItemInit {
     public static final Item REED = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "reed_sticks"), new Item(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 //    public static final Item DESERT_POPLAR_SAPLING = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "desert_poplar_sapling"), new BlockItem(BlockInit.DESERT_POPLAR_SAPLING, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
     public static final Item DESERT_POPLAR_LOG = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_log"), new BlockItem(BlockInit.DESERT_POPLAR_LOG, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item STRIPPED_DESERT_POPLAR_LOG = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"stripped_desert_poplar_log"), new BlockItem(BlockInit.STRIPPED_DESERT_POPLAR_LOG, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
     public static final Item DESERT_POPLAR_LEAVES = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_leaves"), new BlockItem(BlockInit.DESERT_POPLAR_LEAVES, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
     public static final Item DESERT_POPLAR_PLANKS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_planks"), new BlockItem(BlockInit.DESERT_POPLAR_PLANKS, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item DESERT_POPLAR_STAIRS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_stairs"), new BlockItem(BlockInit.DESERT_POPLAR_STAIRS, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item DESERT_POPLAR_SLAB = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_slab"), new BlockItem(BlockInit.DESERT_POPLAR_SLAB, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item DESERT_POPLAR_FENCE = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_fence"), new BlockItem(BlockInit.DESERT_POPLAR_FENCE, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item DESERT_POPLAR_FENCE_GATE = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_fence_gate"), new BlockItem(BlockInit.DESERT_POPLAR_FENCE_GATE, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item DESERT_POPLAR_BUTTON = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_button"), new BlockItem(BlockInit.DESERT_POPLAR_BUTTON, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item DESERT_POPLAR_PRESSURE_PLATE = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_pressure_plate"), new BlockItem(BlockInit.DESERT_POPLAR_PRESSURE_PLATE, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item DESERT_POPLAR_TRAPDOOR = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_trapdoor"), new BlockItem(BlockInit.DESERT_POPLAR_TRAPDOOR, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item DESERT_POPLAR_DOOR = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_door"), new BlockItem(BlockInit.DESERT_POPLAR_DOOR, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+
 
 //    public static final Item JUJUBE_TOP = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "jujube_top"), new BlockItem(BlockInit.JUJUBE_TOP, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
     public static final Item JUJUBE_LEAVES = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "jujube_leaves"), new BlockItem(BlockInit.JUJUBE_LEAVES, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
     public static final Item JUJUBE_LOG = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "jujube_log"), new Item(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item JUJUBE_PLANKS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"jujube_planks"), new BlockItem(BlockInit.JUJUBE_PLANKS, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item JUJUBE_STAIRS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"jujube_stairs"), new BlockItem(BlockInit.JUJUBE_STAIRS, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item JUJUBE_SLAB = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"jujube_slab"), new BlockItem(BlockInit.JUJUBE_SLAB, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
 
     public static final Item PENCIL_PLANT = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "pencil_plant"), new BlockItem(BlockInit.PENCIL_PLANT,new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
@@ -62,6 +77,8 @@ public class ItemInit {
     public static final Item PENCIL_PLANT_LOG = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "pencil_plant_log"), new Item(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
     public static final Item PENCIL_PLANT_PLANKS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"pencil_plant_planks"), new BlockItem(BlockInit.PENCIL_PLANT_PLANKS, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
     public static final Item DETOXIFIED_PENCIL_PLANT_PLANKS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"detoxified_pencil_plant_planks"), new BlockItem(BlockInit.DETOXIFIED_PENCIL_PLANT_PLANKS, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item DETOXIFIED_PENCIL_PLANT_STAIRS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"detoxified_pencil_plant_stairs"), new BlockItem(BlockInit.DETOXIFIED_PENCIL_PLANT_STAIRS, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item DETOXIFIED_PENCIL_PLANT_SLAB = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"detoxified_pencil_plant_slab"), new BlockItem(BlockInit.DETOXIFIED_PENCIL_PLANT_SLAB, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
 
     public static final Item FIRE_PLOUGH = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "fire_plough"), new FirePlough(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
@@ -110,7 +127,30 @@ public class ItemInit {
 
 
     public static void init(){
+        addFuel();
+    }
 
+    private static void addFuel(){
+        FuelRegistry.INSTANCE.add(DESERT_POPLAR_LOG, 300);
+        FuelRegistry.INSTANCE.add(STRIPPED_DESERT_POPLAR_LOG, 300);
+        FuelRegistry.INSTANCE.add(DESERT_POPLAR_PLANKS, 300);
+        FuelRegistry.INSTANCE.add(DESERT_POPLAR_SLAB, 300);
+        FuelRegistry.INSTANCE.add(DESERT_POPLAR_STAIRS, 300);
+
+        FuelRegistry.INSTANCE.add(JUJUBE_LOG, 200);
+        FuelRegistry.INSTANCE.add(JUJUBE_PLANKS, 200);
+        FuelRegistry.INSTANCE.add(JUJUBE_STAIRS, 200);
+        FuelRegistry.INSTANCE.add(JUJUBE_SLAB, 200);
+
+        FuelRegistry.INSTANCE.add(PENCIL_PLANT_LOG, 900);
+        FuelRegistry.INSTANCE.add(PENCIL_PLANT_PLANKS, 900);
+        FuelRegistry.INSTANCE.add(DETOXIFIED_PENCIL_PLANT_PLANKS, 300);
+        FuelRegistry.INSTANCE.add(DETOXIFIED_PENCIL_PLANT_STAIRS, 300);
+        FuelRegistry.INSTANCE.add(DETOXIFIED_PENCIL_PLANT_SLAB, 300);
+
+        FuelRegistry.INSTANCE.add(PACKED_STICKS, 300);
+        FuelRegistry.INSTANCE.add(PACKING_TABLE, 400);
+        FuelRegistry.INSTANCE.add(FIRE_PLOUGH, 150);
     }
 
 }

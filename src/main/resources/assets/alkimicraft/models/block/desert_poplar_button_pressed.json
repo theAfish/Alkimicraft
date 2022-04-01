@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "alkimicraft:block/stripped_desert_poplar_log"
+  }
+}

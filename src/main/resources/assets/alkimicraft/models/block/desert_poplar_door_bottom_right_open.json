@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "textures": {
+    "top": "alkimicraft:block/desert_poplar_door_top",
+    "bottom": "alkimicraft:block/desert_poplar_door_bottom"
+  }
+}
