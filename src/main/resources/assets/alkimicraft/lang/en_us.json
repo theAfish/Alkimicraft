@@ -56,6 +56,7 @@
   "copper_elsholtzia_seeds.tooltips": "Coppoise like it!",
   "item.alkimicraft.copper_nugget": "Copper Nugget",
   "item.alkimicraft.copper_shell": "Copper Shell",
+  "item.alkimicraft.coppoise_in_bag": "Coppoise",
 
 
   "block.alkimicraft.wooden_barrel": "Wooden Barrel",
@@ -81,6 +82,28 @@
   "block.alkimicraft.detoxified_pencil_plant_planks": "Detoxified Pencil Plant Planks",
   "block.alkimicraft.detoxified_pencil_plant_slab": "Detoxified Pencil Plant Slab",
   "block.alkimicraft.detoxified_pencil_plant_stairs": "Detoxified Pencil Plant Stairs",
+
+  "block.alkimicraft.star_laurel.star_laurel_log": "Star Laurel Log",
+  "block.alkimicraft.star_laurel.stripped_star_laurel_log": "Stripped Star Laurel Log",
+  "block.alkimicraft.star_laurel.star_laurel_leaves": "Star Laurel Leaves",
+  "block.alkimicraft.star_laurel.flowering_star_laurel_leaves": "Flowering Star Laurel Leaves",
+  "block.alkimicraft.star_laurel.star_laurel_planks": "Star Laurel Planks",
+  "block.alkimicraft.star_laurel.star_laurel_slab": "Star Laurel Slab",
+  "block.alkimicraft.star_laurel.star_laurel_stairs": "Star Laurel Stairs",
+  "block.alkimicraft.star_laurel.star_laurel_trapdoor": "Star Laurel Trapdoor",
+  "block.alkimicraft.star_laurel.star_laurel_door": "Star Laurel Door",
+  "block.alkimicraft.star_laurel.star_laurel_button": "Star Laurel Button",
+  "block.alkimicraft.star_laurel.star_laurel_pressure_plate": "Star Laurel Pressure Plate",
+  "block.alkimicraft.star_laurel.star_laurel_fence": "Star Laurel Fence",
+  "block.alkimicraft.star_laurel.star_laurel_fence_gate": "Star Laurel Fence Gate",
+  "block.alkimicraft.star_laurel.star_laurel_sapling": "Star Laurel Sapling",
+  "item.alkimicraft.star_laurel.star_laurel_seeds": "Star Laurel Seeds",
+  "star_laurel_seeds.tooltips": "A flower, or a tree?",
+
+  "block.alkimicraft.snow_lantern_plant": "Snow Lantern",
+
+
+
   "block.alkimicraft.loamy_sand": "Loamy Sand",
   "block.alkimicraft.sandy_loam": "Sandy Loam",
   "block.alkimicraft.barren_loam": "Barren Loam",

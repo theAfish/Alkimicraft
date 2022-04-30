@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "alkimicraft:block/star_laurel/star_laurel_pressure_plate"
+    },
+    "powered=true": {
+      "model": "alkimicraft:block/star_laurel/star_laurel_pressure_plate_down"
+    }
+  }
+}

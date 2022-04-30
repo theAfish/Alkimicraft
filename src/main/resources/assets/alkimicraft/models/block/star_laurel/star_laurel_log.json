@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "alkimicraft:block/star_laurel/star_laurel_log_top",
+    "side": "alkimicraft:block/star_laurel/star_laurel_log"
+  }
+}

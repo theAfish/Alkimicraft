@@ -9,6 +9,7 @@ import net.fabricmc.alkimicraft.client.renderer.block.entity.TipiFireEntityRende
 import net.fabricmc.alkimicraft.init.BlockInit;
 import net.fabricmc.alkimicraft.init.EntityInit;
 import net.fabricmc.alkimicraft.init.ScreenInit;
+import net.fabricmc.alkimicraft.screen.MicroscopeScreen;
 import net.fabricmc.alkimicraft.screen.WoodenBarrelScreen;
 import net.fabricmc.alkimicraft.utils.BlockEntityRenders;
 import net.fabricmc.alkimicraft.utils.BlockRenders;
@@ -41,6 +42,8 @@ public class AlkimiCraftClient implements ClientModInitializer {
         FluidRenders.defineRenders();
         BlockEntityRenders.defineRenders();
         ScreenRegistry.register(ScreenInit.WOODEN_BARREL_SCREEN_HANDLER, WoodenBarrelScreen::new);
+        ScreenRegistry.register(ScreenInit.MICROSCOPE_SCREEN_HANDLER, MicroscopeScreen::new);
+
 
 
         EntityRendererRegistry.INSTANCE.register(EntityInit.STARRY_BODY, StarryBodyEntityRenderer::new);

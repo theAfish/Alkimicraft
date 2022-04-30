@@ -66,6 +66,7 @@ public class AlkimiCraft implements ModInitializer {
 		StructureInit.init();
 		ItemInit.init();
 		BlockInit.init();
+		BlockEntityInit.init();
 		FluidInit.init();
 		RecipeInit.init();
 		EntityInit.init();
@@ -84,6 +85,7 @@ public class AlkimiCraft implements ModInitializer {
 		}
 
 		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+			if (true){return;}
 			ServerWorld overworld = server.getWorld(World.OVERWORLD);
 			ServerWorld world = server.getWorld(WORLD_KEY);
 

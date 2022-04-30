@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "alkimicraft:block/star_laurel/star_laurel_planks",
+    "top": "alkimicraft:block/star_laurel/star_laurel_planks",
+    "side": "alkimicraft:block/star_laurel/star_laurel_planks"
+  }
+}

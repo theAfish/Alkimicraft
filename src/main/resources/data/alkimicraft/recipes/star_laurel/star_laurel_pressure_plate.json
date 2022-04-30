@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "alkimicraft:star_laurel/star_laurel_planks"
+    }
+  },
+  "result": {
+    "item": "alkimicraft:star_laurel/star_laurel_pressure_plate",
+    "count": 1
+  }
+}

@@ -1,6 +1,16 @@
 {
-  "parent": "minecraft:block/crop",
+  "ambientocclusion": true,
   "textures": {
-    "crop": "alkimicraft:block/just_planted_plant_0"
-  }
+    "particle": "alkimicraft:block/just_planted",
+    "just_planted": "alkimicraft:block/just_planted"
+  },
+  "elements": [
+    {
+      "from": [ 0, 0.01, 0 ],
+      "to": [ 16, 0.01, 16 ],
+      "faces": {
+        "up": { "uv": [ 0, 0, 16, 16 ], "texture": "#just_planted" }
+      }
+    }
+  ]
 }

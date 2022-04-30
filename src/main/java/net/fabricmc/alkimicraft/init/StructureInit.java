@@ -10,6 +10,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.collection.DataPool;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -24,6 +25,7 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliage.LargeOakFoliagePlacer;
+import net.minecraft.world.gen.foliage.RandomSpreadFoliagePlacer;
 import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
 import net.minecraft.world.gen.placementmodifier.BiomePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.CountMultilayerPlacementModifier;
@@ -35,12 +37,14 @@ import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.treedecorator.AlterGroundTreeDecorator;
 import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
 import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.Supplier;
 
 public class StructureInit {
@@ -83,12 +87,30 @@ public class StructureInit {
                     new LargeOakTrunkPlacer(6, 3, 3), // 放置竖直树干
                     BlockStateProvider.of(BlockInit.DESERT_POPLAR_LEAVES), // 树叶方块提供器
                     new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(2), 3), // 生成水滴状的树叶（半径、相对于树干的偏移、高度）
-                    BlockStateProvider.of(BlockInit.DESERT_POPLAR_LEAVES), // 树叶方块提供器
+                    BlockStateProvider.of(BlockInit.LOAMY_SAND), // 树叶方块提供器
                     new TwoLayersFeatureSize(3, 0, 5), // 不同层的树木的宽度，用于查看树木在不卡到方块中可以有多高
                     ImmutableList.of(new AlterGroundSmall(BlockStateProvider.of(BlockInit.LOAMY_SAND))),
                     true,true
             ){});
     public static PlacedFeature DESERT_POPLAR_PLACED_FEATURE = new PlacedFeature(RegistryEntry.of(DESERT_POPLAR), Arrays.asList(RarityFilterPlacementModifier.of(300), SquarePlacementModifier.of(), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of()));
+
+    public static final ConfiguredFeature<?, ?> STAR_LAUREL = new ConfiguredFeature<>(Feature.TREE,
+            // 使用builder配置特征地形
+            new TreeFeatureConfig(
+                    BlockStateProvider.of(BlockInit.STAR_LAUREL_LOG), // 树干方块提供器
+                    new StraightTrunkPlacer(4, 1, 1), // 放置竖直树干
+                    new WeightedBlockStateProvider(DataPool.<BlockState>builder().add(BlockInit.STAR_LAUREL_LEAVES.getDefaultState(), 3).add(BlockInit.FLOWERING_STAR_LAUREL_LEAVES.getDefaultState(), 1).build()), // 树叶方块提供器
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+                    BlockStateProvider.of(Blocks.DIRT),
+                    new TwoLayersFeatureSize(1, 0, 1), // 不同层的树木的宽度，用于查看树木在不卡到方块中可以有多高
+                    ImmutableList.of(),
+                    true,true
+            ){});
+    public static PlacedFeature STAR_LAUREL_PLACED_FEATURE = new PlacedFeature(RegistryEntry.of(STAR_LAUREL), Arrays.asList(RarityFilterPlacementModifier.of(1),PlacedFeatures.OCEAN_FLOOR_WG_HEIGHTMAP));
+
+    private static final Feature<DefaultFeatureConfig> LAUREL_WITH_SNOW_LANTERN = Registry.register(Registry.FEATURE, new Identifier(AlkimiCraft.MOD_ID, "laurel_with_snow_lantern"), new LaurelAndLanternFeature(DefaultFeatureConfig.CODEC));
+    public static final ConfiguredFeature<?, ?> LAUREL_WITH_SNOW_LANTERN_CONFIG = new ConfiguredFeature<>(LAUREL_WITH_SNOW_LANTERN,FeatureConfig.DEFAULT);
+    public static PlacedFeature LAUREL_WITH_SNOW_LANTERN_PLACED_FEATURE = new PlacedFeature(RegistryEntry.of(LAUREL_WITH_SNOW_LANTERN_CONFIG), Arrays.asList(RarityFilterPlacementModifier.of(5), SquarePlacementModifier.of(), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of()));
 
 
 //    public static final ConfiguredFeature<?, ?> SMALL_DESERT_POPLAR = Feature.TREE
@@ -133,6 +155,13 @@ public class StructureInit {
         Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(AlkimiCraft.MOD_ID, "desert_poplar"), DESERT_POPLAR_PLACED_FEATURE);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DESERT), GenerationStep.Feature.VEGETAL_DECORATION, RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                 new Identifier(AlkimiCraft.MOD_ID, "desert_poplar")));
+
+        RegistryKey<ConfiguredFeature<?, ?>> star_laurel = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(AlkimiCraft.MOD_ID, "star_laurel"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, star_laurel.getValue(), LAUREL_WITH_SNOW_LANTERN_CONFIG);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(AlkimiCraft.MOD_ID, "star_laurel"), LAUREL_WITH_SNOW_LANTERN_PLACED_FEATURE);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.OLD_GROWTH_BIRCH_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                new Identifier(AlkimiCraft.MOD_ID, "star_laurel")));
+
 
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(AlkimiCraft.MOD_ID, "jujube_tree"), JUJUBE_TREE_CONFIG);
         Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(AlkimiCraft.MOD_ID, "jujube_tree"), JUJUBE_TREE_PLACED_FEATURE);

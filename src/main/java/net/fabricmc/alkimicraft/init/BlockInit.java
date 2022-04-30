@@ -3,6 +3,7 @@ package net.fabricmc.alkimicraft.init;
 import net.fabricmc.alkimicraft.AlkimiCraft;
 import net.fabricmc.alkimicraft.blocks.*;
 import net.fabricmc.alkimicraft.structures.trees.DesertPoplarSaplingGenerator;
+import net.fabricmc.alkimicraft.structures.trees.StarLaurelSaplingGenerator;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -72,6 +73,7 @@ public class BlockInit {
     public static Block ARTEMISIA_ARENARIA = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "artemisia_arenaria"), new BlockArtemisiaArenaria(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().sounds(BlockSoundGroup.CROP).nonOpaque()));
     public static Block IRON_ROOT_GRASS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "iron_root_grass"), new BlockIronRootGrass(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().sounds(BlockSoundGroup.CROP).nonOpaque()));
     public static Block FERTILE_BEANS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "fertile_beans"), new FertileBeans(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().sounds(BlockSoundGroup.CROP).nonOpaque()));
+    public static Block SNOW_LANTERN_PLANT = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "snow_lantern_plant"), new SnowLanternPlant(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().luminance(createLightLevelFromLitBlockState(6)).sounds(BlockSoundGroup.CROP).nonOpaque()));
 
 
     public static Block DESERT_POPLAR_LEAVES = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_leaves"), createLeavesBlock(BlockSoundGroup.GRASS));
@@ -104,6 +106,23 @@ public class BlockInit {
     public static Block DETOXIFIED_PENCIL_PLANT_STAIRS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"detoxified_pencil_plant_stairs"), new StairsBlock(DETOXIFIED_PENCIL_PLANT_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OAK_STAIRS)){});
     public static Block DETOXIFIED_PENCIL_PLANT_SLAB = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"detoxified_pencil_plant_slab"), new SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_SLAB)));
 
+    public static Block STAR_LAUREL_LOG = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/star_laurel_log"), createLogBlock(MapColor.OAK_TAN, MapColor.GRAY));
+    public static Block STAR_LAUREL_LEAVES = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/star_laurel_leaves"), createLeavesBlock(BlockSoundGroup.GRASS));
+    public static Block FLOWERING_STAR_LAUREL_LEAVES = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/flowering_star_laurel_leaves"), new FloweringStarLaurelLeaves(AbstractBlock.Settings.of(Material.LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().luminance(createLightLevelFromLitBlockState(5)).allowsSpawning(BlockInit::canSpawnOnLeaves).suffocates(BlockInit::never).blockVision(BlockInit::never)));
+    public static Block STAR_LAUREL_PLANKS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/star_laurel_planks"), new Block(AbstractBlock.Settings.of(Material.WOOD).strength(1f).sounds(BlockSoundGroup.WOOD)));
+    public static Block STRIPPED_STAR_LAUREL_LOG = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/stripped_star_laurel_log"), createLogBlock(MapColor.OAK_TAN, MapColor.YELLOW));
+    public static Block STAR_LAUREL_SAPLING = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "star_laurel/star_laurel_sapling"), new SaplingBlock(new StarLaurelSaplingGenerator(), AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+    public static Block STAR_LAUREL_SEEDLING = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "star_laurel/star_laurel_seedling"), new StarLaurelSeedling(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+    public static Block STAR_LAUREL_STAIRS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "star_laurel/star_laurel_stairs"), new StairsBlock(STAR_LAUREL_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OAK_STAIRS)){});
+    public static Block STAR_LAUREL_SLAB = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "star_laurel/star_laurel_slab"), new SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_SLAB)));
+    public static Block STAR_LAUREL_FENCE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "star_laurel/star_laurel_fence"), new FenceBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE)));
+    public static Block STAR_LAUREL_FENCE_GATE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "star_laurel/star_laurel_fence_gate"), new FenceGateBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE)));
+    public static Block STAR_LAUREL_BUTTON = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "star_laurel/star_laurel_button"), new WoodenButtonBlock(AbstractBlock.Settings.copy(Blocks.OAK_BUTTON)){});
+    public static Block STAR_LAUREL_PRESSURE_PLATE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "star_laurel/star_laurel_pressure_plate"), new PressurePlateBlock(PressurePlateBlock.ActivationRule.MOBS, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE)){});
+    public static Block STAR_LAUREL_TRAPDOOR = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "star_laurel/star_laurel_trapdoor"), new TrapdoorBlock(AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR)){});
+    public static Block STAR_LAUREL_DOOR = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "star_laurel/star_laurel_door"), new DoorBlock(AbstractBlock.Settings.copy(Blocks.OAK_DOOR)){});
+
+
 
     public static Block TIPI_FIRE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "tipi_fire"), new TipiFire(true, 1, AbstractBlock.Settings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD).luminance(createLightLevelFromLitBlockState(10)).nonOpaque()));
     public static Block PACKING_TABLE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "packing_table"), new PackingTableBlock(AbstractBlock.Settings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
@@ -120,6 +139,8 @@ public class BlockInit {
     public static Block GOLD_ORE_DEPOSIT = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"gold_ore_deposit"), new BuddingOreBlock(AbstractBlock.Settings.of(Material.METAL).strength(1.5f).ticksRandomly(), SMALL_GOLD_BUD, MEDIUM_GOLD_BUD, LARGE_GOLD_BUD, GOLD_CLUSTER));
 
     public static Block COPPER_ELSHOLTZIA = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"copper_elsholtzia"), new CopperElsholtzia(AbstractBlock.Settings.of(Material.PLANT).strength(0.2f).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().noCollision()));
+
+    public static Block MICROSCOPE = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"microscope"), new Microscope(AbstractBlock.Settings.of(Material.AMETHYST).strength(0.2f).sounds(BlockSoundGroup.ANCIENT_DEBRIS).nonOpaque()));
 
 
 
@@ -150,6 +171,13 @@ public class BlockInit {
         fbr.add(DETOXIFIED_PENCIL_PLANT_STAIRS, 5, 5);
         fbr.add(DETOXIFIED_PENCIL_PLANT_SLAB, 5, 5);
 
+        fbr.add(STAR_LAUREL_LOG, 5, 5);
+        fbr.add(STAR_LAUREL_LEAVES, 5, 5);
+        fbr.add(STRIPPED_STAR_LAUREL_LOG, 5, 5);
+        fbr.add(STAR_LAUREL_PLANKS, 5, 5);
+        fbr.add(STAR_LAUREL_STAIRS, 5, 5);
+        fbr.add(STAR_LAUREL_SLAB, 5, 5);
+
 
         fbr.add(PACKED_STICKS, 5, 5);
 
@@ -157,12 +185,11 @@ public class BlockInit {
 
     private static void addStrippedLogs(){
         StrippableBlockRegistry.register(DESERT_POPLAR_LOG, STRIPPED_DESERT_POPLAR_LOG);
+        StrippableBlockRegistry.register(STAR_LAUREL_LOG, STRIPPED_STAR_LAUREL_LOG);
     }
 
     private static ToIntFunction<BlockState> createLightLevelFromLitBlockState(int litLevel) {
-        return (state) -> {
-            return (Boolean)state.get(Properties.LIT) ? litLevel : 0;
-        };
+        return (state) -> (Boolean)state.get(Properties.LIT) ? litLevel : 0;
     }
 
     private static LeavesBlock createLeavesBlock(BlockSoundGroup soundGroup) {

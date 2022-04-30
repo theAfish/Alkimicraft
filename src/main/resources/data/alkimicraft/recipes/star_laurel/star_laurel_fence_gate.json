@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#i#",
+    "#i#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "i": {
+      "item": "alkimicraft:star_laurel/star_laurel_planks"
+    }
+  },
+  "result": {
+    "item": "alkimicraft:star_laurel/star_laurel_fence_gate",
+    "count": 1
+  }
+}

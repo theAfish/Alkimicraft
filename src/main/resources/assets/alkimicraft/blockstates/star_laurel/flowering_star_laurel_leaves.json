@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "berries=false": {
+      "model": "alkimicraft:block/star_laurel/flowering_star_laurel_leaves"
+    },
+    "berries=true": {
+      "model": "alkimicraft:block/star_laurel/star_laurel_leaves_with_seeds"
+    }
+  }
+}

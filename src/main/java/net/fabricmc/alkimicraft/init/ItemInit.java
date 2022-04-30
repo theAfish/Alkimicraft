@@ -62,6 +62,21 @@ public class ItemInit {
     public static final Item DESERT_POPLAR_TRAPDOOR = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_trapdoor"), new BlockItem(BlockInit.DESERT_POPLAR_TRAPDOOR, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
     public static final Item DESERT_POPLAR_DOOR = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_door"), new BlockItem(BlockInit.DESERT_POPLAR_DOOR, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
+    public static final Item STAR_LAUREL_LOG = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/star_laurel_log"), new BlockItem(BlockInit.STAR_LAUREL_LOG, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item STRIPPED_STAR_LAUREL_LOG = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/stripped_star_laurel_log"), new BlockItem(BlockInit.STRIPPED_STAR_LAUREL_LOG, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item STAR_LAUREL_LEAVES = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/star_laurel_leaves"), new BlockItem(BlockInit.STAR_LAUREL_LEAVES, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item FLOWERING_STAR_LAUREL_LEAVES = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/flowering_star_laurel_leaves"), new BlockItem(BlockInit.FLOWERING_STAR_LAUREL_LEAVES, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item STAR_LAUREL_PLANKS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/star_laurel_planks"), new BlockItem(BlockInit.STAR_LAUREL_PLANKS  , new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item STAR_LAUREL_STAIRS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/star_laurel_stairs"), new BlockItem(BlockInit.STAR_LAUREL_STAIRS, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item STAR_LAUREL_SLAB = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/star_laurel_slab"), new BlockItem(BlockInit.STAR_LAUREL_SLAB, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item STAR_LAUREL_FENCE = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/star_laurel_fence"), new BlockItem(BlockInit.STAR_LAUREL_FENCE, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item STAR_LAUREL_FENCE_GATE = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/star_laurel_fence_gate"), new BlockItem(BlockInit.STAR_LAUREL_FENCE_GATE, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item STAR_LAUREL_BUTTON = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/star_laurel_button"), new BlockItem(BlockInit.STAR_LAUREL_BUTTON, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item STAR_LAUREL_PRESSURE_PLATE = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/star_laurel_pressure_plate"), new BlockItem(BlockInit.STAR_LAUREL_PRESSURE_PLATE, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item STAR_LAUREL_TRAPDOOR = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/star_laurel_trapdoor"), new BlockItem(BlockInit.STAR_LAUREL_TRAPDOOR, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item STAR_LAUREL_DOOR = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"star_laurel/star_laurel_door"), new BlockItem(BlockInit.STAR_LAUREL_DOOR, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item STAR_LAUREL_SAPLING = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "star_laurel/star_laurel_sapling"), new BlockItem(BlockInit.STAR_LAUREL_SAPLING, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+
 
 //    public static final Item JUJUBE_TOP = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "jujube_top"), new BlockItem(BlockInit.JUJUBE_TOP, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
@@ -79,6 +94,8 @@ public class ItemInit {
     public static final Item DETOXIFIED_PENCIL_PLANT_PLANKS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"detoxified_pencil_plant_planks"), new BlockItem(BlockInit.DETOXIFIED_PENCIL_PLANT_PLANKS, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
     public static final Item DETOXIFIED_PENCIL_PLANT_STAIRS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"detoxified_pencil_plant_stairs"), new BlockItem(BlockInit.DETOXIFIED_PENCIL_PLANT_STAIRS, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
     public static final Item DETOXIFIED_PENCIL_PLANT_SLAB = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"detoxified_pencil_plant_slab"), new BlockItem(BlockInit.DETOXIFIED_PENCIL_PLANT_SLAB, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+
+    public static final Item SNOW_LANTERN_PLANT = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "snow_lantern_plant"), new BlockItem(BlockInit.SNOW_LANTERN_PLANT,new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
 
     public static final Item FIRE_PLOUGH = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "fire_plough"), new FirePlough(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
@@ -99,7 +116,9 @@ public class ItemInit {
 
     public static final Item COPPER_SHELL = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "copper_shell"), new Item(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
     public static final Item COPPER_NUGGET = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "copper_nugget"), new Item(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item COPPOISE_IN_BAG = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "coppoise_in_bag"), new CreatureInBag(EntityInit.COPPOISE, new Item.Settings().group(AlkimiCraft.ITEM_GROUP).maxCount(1)));
 
+    public static final Item MICROSCOPE = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"microscope"), new BlockItem(BlockInit.MICROSCOPE, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
     // Spawn eggs
     public static final Item COPPOISE_SPAWN_EGG = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "coppoise_spawn_egg"), new SpawnEggItem(EntityInit.COPPOISE, 15172180, 5882659, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
@@ -124,6 +143,8 @@ public class ItemInit {
         @Override public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {tooltip.add( new TranslatableText("jujube.tooltips").formatted(Formatting.GREEN));}});
     public static final Item COPPER_ELSHOLTZIA_SEEDS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "copper_elsholtzia_seeds"), new AliasedBlockItem(BlockInit.COPPER_ELSHOLTZIA, new Item.Settings().group(AlkimiCraft.SEEDS_GROUP)){
         @Override public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {tooltip.add( new TranslatableText("copper_elsholtzia_seeds.tooltips").formatted(Formatting.GREEN));}});
+    public static final Item STAR_LAUREL_SEEDS = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "star_laurel/star_laurel_seeds"), new AliasedBlockItem(BlockInit.STAR_LAUREL_SEEDLING, new Item.Settings().group(AlkimiCraft.SEEDS_GROUP)){
+        @Override public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {tooltip.add( new TranslatableText("star_laurel_seeds.tooltips").formatted(Formatting.GREEN));}});
 
 
     public static void init(){

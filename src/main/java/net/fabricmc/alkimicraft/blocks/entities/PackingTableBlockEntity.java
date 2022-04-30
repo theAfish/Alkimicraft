@@ -9,11 +9,14 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.Packet;
+import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.util.Clearable;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import org.jetbrains.annotations.Nullable;
 
 public class PackingTableBlockEntity extends BlockEntity implements Clearable{
     private final DefaultedList<ItemStack> itemsWaitingPacked;
@@ -54,9 +57,6 @@ public class PackingTableBlockEntity extends BlockEntity implements Clearable{
         return nbt;
     }
 
-    public NbtCompound toInitialChunkDataNbt() {
-        return this.saveInitialChunkData(new NbtCompound());
-    }
 
     public boolean addItem(ItemStack item) {
         for(int i = 0; i < this.itemsWaitingPacked.size(); ++i) {
@@ -91,14 +91,19 @@ public class PackingTableBlockEntity extends BlockEntity implements Clearable{
     }
 
     @Override
-    public BlockEntityUpdateS2CPacket toUpdatePacket() {
+    public void clear() {
+        this.itemsWaitingPacked.clear();
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientPlayPacketListener> toUpdatePacket() {
         return BlockEntityUpdateS2CPacket.create(this);
     }
 
-
     @Override
-    public void clear() {
-        this.itemsWaitingPacked.clear();
+    public NbtCompound toInitialChunkDataNbt() {
+        return createNbt();
     }
 
 }

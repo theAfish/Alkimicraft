@@ -8,6 +8,8 @@
     "BucketItemMixin",
     "FenceMixin",
     "FlowableFluidMixin",
+    "HeldItemRendererMixin",
+    "ItemEntityMixin",
     "MixinBlockEntity"
   ],
   "client": [

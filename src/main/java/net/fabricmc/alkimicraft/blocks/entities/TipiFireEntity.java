@@ -11,6 +11,8 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.Packet;
+import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.recipe.CampfireCookingRecipe;
 import net.minecraft.recipe.RecipeType;
@@ -21,6 +23,7 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 import java.util.Random;
@@ -143,10 +146,6 @@ public class TipiFireEntity extends BlockEntity implements Clearable {
         return nbt;
     }
 
-    public NbtCompound toInitialChunkDataNbt() {
-        return this.saveInitialChunkData(new NbtCompound());
-    }
-
     public Optional<CampfireCookingRecipe> getRecipeFor(ItemStack item) {
         return this.itemsBeingCooked.stream().noneMatch(ItemStack::isEmpty) ? Optional.empty() : this.world.getRecipeManager().getFirstMatch(RecipeType.CAMPFIRE_COOKING, new SimpleInventory(new ItemStack[]{item}), this.world);
     }
@@ -205,9 +204,16 @@ public class TipiFireEntity extends BlockEntity implements Clearable {
         }
     }
 
+
+    @Nullable
     @Override
-    public BlockEntityUpdateS2CPacket toUpdatePacket() {
+    public Packet<ClientPlayPacketListener> toUpdatePacket() {
         return BlockEntityUpdateS2CPacket.create(this);
+    }
+
+    @Override
+    public NbtCompound toInitialChunkDataNbt() {
+        return createNbt();
     }
 
     @Override
@@ -222,4 +228,6 @@ public class TipiFireEntity extends BlockEntity implements Clearable {
         }
 
     }
+
+
 }

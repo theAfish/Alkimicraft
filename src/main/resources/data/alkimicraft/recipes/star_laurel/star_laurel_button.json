@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "alkimicraft:star_laurel/star_laurel_planks"
+    }
+  ],
+  "result": {
+    "item": "alkimicraft:star_laurel/star_laurel_button",
+    "count": 1
+  }
+}

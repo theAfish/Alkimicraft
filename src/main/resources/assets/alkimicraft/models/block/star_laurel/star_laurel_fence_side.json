@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "alkimicraft:block/star_laurel/star_laurel_planks"
+  }
+}
