@@ -19,10 +19,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.alkimicraft.AlkimiCraft"
+      "net.thenotfish.alkimicraft.AlkimiCraft"
     ],
     "client": [
-      "net.fabricmc.alkimicraft.AlkimiCraftClient"
+      "net.thenotfish.alkimicraft.AlkimiCraftClient"
     ]
   },
   "mixins": [
