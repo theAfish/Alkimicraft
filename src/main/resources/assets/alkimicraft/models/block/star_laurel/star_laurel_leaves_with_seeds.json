@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "alkimicraft:block/star_laurel/star_laurel_leaves_with_seeds"
+  }
+}

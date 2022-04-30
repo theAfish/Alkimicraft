@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "alkimicraft:block/microscope",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "alkimicraft:block/microscope"
+    },
+    "facing=south": {
+      "model": "alkimicraft:block/microscope",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "alkimicraft:block/microscope",
+      "y": 270
+    }
+  }
+}
+

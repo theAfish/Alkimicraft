@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "alkimicraft:block/star_laurel/flowering_star_laurel_leaves"
+  }
+}

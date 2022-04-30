@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "alkimicraft:block/star_laurel/stripped_star_laurel_log"
+  }
+}

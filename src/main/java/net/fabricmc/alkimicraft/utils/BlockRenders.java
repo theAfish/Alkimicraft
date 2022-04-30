@@ -18,6 +18,9 @@ public class BlockRenders {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.BLOCK_REED, RenderLayer.getCutoutMipped());
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0xFFFFFF, BlockInit.BLOCK_REED);
 
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SNOW_LANTERN_PLANT, RenderLayer.getCutoutMipped());
+        ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0xFFFFFF, BlockInit.SNOW_LANTERN_PLANT);
+
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.DESERT_POPLAR_SAPLING, RenderLayer.getCutoutMipped());
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0xFFFFFF, BlockInit.DESERT_POPLAR_SAPLING);
 
@@ -32,6 +35,9 @@ public class BlockRenders {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.DESERT_POPLAR_LEAVES, RenderLayer.getCutoutMipped());
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0xFFD21B, BlockInit.DESERT_POPLAR_LEAVES);
 
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.STAR_LAUREL_LEAVES, RenderLayer.getCutoutMipped());
+//        ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0x3a5d1d, BlockInit.STAR_LAUREL_LEAVES);
+
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.JUJUBE_LEAVES, RenderLayer.getCutoutMipped());
 //        ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0x64D007, BlockInit.JUJUBE_LEAVES);
 
@@ -45,6 +51,8 @@ public class BlockRenders {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.WOODEN_BARREL_WATER, RenderLayer.getTranslucent());
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getWaterColor(view, pos), BlockInit.WOODEN_BARREL_WATER);
 
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.MICROSCOPE, RenderLayer.getCutoutMipped());
+
 //        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.WOODEN_BARREL_SEWAGE, RenderLayer.getTranslucent());
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0xB98747, BlockInit.WOODEN_BARREL_SEWAGE);
 
@@ -56,7 +64,10 @@ public class BlockRenders {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.COPPER_ELSHOLTZIA, RenderLayer.getCutoutMipped());
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0xFFFFFF, BlockInit.COPPER_ELSHOLTZIA);
 
-
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.STAR_LAUREL_TRAPDOOR, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.STAR_LAUREL_DOOR, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.STAR_LAUREL_SAPLING, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.STAR_LAUREL_SEEDLING, RenderLayer.getCutoutMipped());
 
     }
 }

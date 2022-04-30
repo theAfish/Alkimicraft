@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "alkimicraft:block/star_laurel/star_laurel_slab"
+    },
+    "type=double": {
+      "model": "alkimicraft:block/star_laurel/star_laurel_planks"
+    },
+    "type=top": {
+      "model": "alkimicraft:block/star_laurel/star_laurel_slab_top"
+    }
+  }
+}

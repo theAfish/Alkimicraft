@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "alkimicraft:block/star_laurel/star_laurel_planks"
+  }
+}

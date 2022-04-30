@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "alkimicraft:star_laurel/star_laurel_logs"
+    }
+  ],
+  "result": {
+    "item": "alkimicraft:star_laurel/star_laurel_planks",
+    "count": 4
+  }
+}

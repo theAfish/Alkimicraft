@@ -36,7 +36,6 @@ public class DesertPoplarSaplingBlock extends SaplingBlock {
                 this.generate(world, pos, state, random);
             }
         }
-
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

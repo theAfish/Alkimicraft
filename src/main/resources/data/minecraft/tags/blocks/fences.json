@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values":[
-    "alkimicraft:desert_poplar_fence"
+    "alkimicraft:desert_poplar_fence",
+    "alkimicraft:star_laurel/star_laurel_fence"
   ]
 }

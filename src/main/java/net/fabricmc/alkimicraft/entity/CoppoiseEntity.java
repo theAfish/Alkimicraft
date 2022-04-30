@@ -5,6 +5,8 @@ import net.fabricmc.alkimicraft.init.EntityInit;
 import net.fabricmc.alkimicraft.init.ItemInit;
 import net.minecraft.block.*;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.brain.Brain;
+import net.minecraft.entity.ai.brain.MemoryModuleType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -13,13 +15,17 @@ import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.AxolotlEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
@@ -27,7 +33,7 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 
-public class CoppoiseEntity extends AnimalEntity {
+public class CoppoiseEntity extends AnimalEntity implements Pickable {
     private static final TrackedData<Byte> COPPOISE_FLAGS;
     private static final int HIDING_FLAG = 1;
     private Boolean canShelling = false;
@@ -122,6 +128,38 @@ public class CoppoiseEntity extends AnimalEntity {
     static {
         COPPOISE_FLAGS = DataTracker.registerData(CoppoiseEntity.class, TrackedDataHandlerRegistry.BYTE);
 
+    }
+
+    public ActionResult interactMob(PlayerEntity playerEntity, Hand hand) {
+        if (playerEntity.isSneaking()){
+            return Pickable.tryPick(playerEntity, hand, this).orElse(super.interactMob(playerEntity, hand));
+        }
+        return ActionResult.CONSUME;
+    }
+
+    @Override
+    public void copyDataToStack(ItemStack itemStack) {
+        Pickable.copyDataToStack(this, itemStack);
+        NbtCompound nbtCompound = itemStack.getOrCreateNbt();
+        nbtCompound.putInt("Age", this.getBreedingAge());
+    }
+
+    @Override
+    public void copyDataFromNbt(NbtCompound nbtCompound) {
+        Pickable.copyDataFromNbt(this, nbtCompound);
+
+        if (nbtCompound.contains("Age")) {
+            this.setBreedingAge(nbtCompound.getInt("Age"));
+        }
+    }
+
+    @Override
+    public ItemStack getBagItem() {
+        return new ItemStack(ItemInit.COPPOISE_IN_BAG);
+    }
+
+    @Override
+    public void setFromBucket(boolean bl) {
     }
 
     public class EatCopperCropGoal extends MoveToTargetPosGoal{
