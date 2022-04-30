@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fabricmc.alkimicraft.mixin",
+  "package": "net.thenotfish.alkimicraft.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "BlockMixin",
