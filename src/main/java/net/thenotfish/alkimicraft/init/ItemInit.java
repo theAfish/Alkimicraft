@@ -96,6 +96,9 @@ public class ItemInit {
     public static final Item DETOXIFIED_PENCIL_PLANT_SLAB = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID,"detoxified_pencil_plant_slab"), new BlockItem(BlockInit.DETOXIFIED_PENCIL_PLANT_SLAB, new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
     public static final Item SNOW_LANTERN_PLANT = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "snow_lantern_plant"), new BlockItem(BlockInit.SNOW_LANTERN_PLANT,new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+    public static final Item FOREVER_BRIGHT_SNOW_LANTERN_PLANT = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "forever_bright_snow_lantern_plant"), new BlockItem(BlockInit.FOREVER_BRIGHT_SNOW_LANTERN_PLANT,new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
+
+    public static final Item DEAD_PLANT = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "dead_plant"), new Item(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));
 
 
     public static final Item FIRE_PLOUGH = Registry.register(Registry.ITEM, new Identifier(AlkimiCraft.MOD_ID, "fire_plough"), new FirePlough(new Item.Settings().group(AlkimiCraft.ITEM_GROUP)));

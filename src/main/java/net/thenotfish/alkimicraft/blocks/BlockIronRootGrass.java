@@ -49,19 +49,21 @@ public class BlockIronRootGrass extends CropBlock {
                     }
                 }
             }else if (i < this.getMaxAge()){
-                if (random.nextInt(5) == 0 && world.getBlockState(pos.down()).isOf(Blocks.COBBLESTONE)) {
-                    world.setBlockState(pos, this.withAge(i + 1), Block.NOTIFY_LISTENERS);
-                    world.setBlockState(pos.down(), BlockInit.IRON_COBBLESTONE.getDefaultState());
-                }else if (world.getBlockState(pos.down()).isOf(BlockInit.POROUS_STONE)){
-                    if (world.getBlockState(pos.down()).get(fluidLogged).height%8 == 0) {
+                if (random.nextInt(10) == 0){
+                    if (world.getBlockState(pos.down()).isOf(Blocks.COBBLESTONE)) {
                         world.setBlockState(pos, this.withAge(i + 1), Block.NOTIFY_LISTENERS);
                         world.setBlockState(pos.down(), BlockInit.IRON_COBBLESTONE.getDefaultState());
-                    } else {
-                        ItemEntity iron_nugget_entity = new ItemEntity(world, (double)pos.getX() + 0.5D, (double)pos.getY() - 1.5D, (double)pos.getZ()+0.5D, new ItemStack(Items.IRON_NUGGET, 2));
-                        world.spawnEntity(iron_nugget_entity);
+                    }else if (world.getBlockState(pos.down()).isOf(BlockInit.POROUS_STONE)){
+                        if (world.getBlockState(pos.down()).get(fluidLogged).height%8 == 0) {
+                            world.setBlockState(pos, this.withAge(i + 1), Block.NOTIFY_LISTENERS);
+                            world.setBlockState(pos.down(), BlockInit.IRON_COBBLESTONE.getDefaultState());
+                        } else {
+                            ItemEntity iron_nugget_entity = new ItemEntity(world, (double)pos.getX() + 0.5D, (double)pos.getY() - 1.5D, (double)pos.getZ()+0.5D, new ItemStack(Items.IRON_NUGGET, 2));
+                            world.spawnEntity(iron_nugget_entity);
+                        }
+                    }else if (world.getBlockState(pos.down()).isOf(BlockInit.IRON_COBBLESTONE)){
+                        world.setBlockState(pos, this.withAge(i + 1), Block.NOTIFY_LISTENERS);
                     }
-                }else if (world.getBlockState(pos.down()).isOf(BlockInit.IRON_COBBLESTONE)){
-                    world.setBlockState(pos, this.withAge(i + 1), Block.NOTIFY_LISTENERS);
                 }
             }
         }

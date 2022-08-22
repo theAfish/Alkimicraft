@@ -1,0 +1,22 @@
+{
+  "type": "alkimicraft:mixing_recipe",
+  "ingredients": [
+    {
+      "item": "alkimicraft:snow_lantern_plant"
+    },
+    {
+      "item": "minecraft:glowstone_dust"
+    },
+    {
+      "item": "minecraft:glowstone_dust"
+    },
+    {
+      "item": "minecraft:glowstone_dust"
+    }
+  ],
+  "level": 1,
+  "result": {
+    "item": "alkimicraft:dead_plant",
+    "count": 1
+  }
+}

@@ -24,7 +24,7 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 public class Microscope extends BlockWithEntity implements BlockEntityProvider{
-    public static final VoxelShape shape = Block.createCuboidShape(5.0D, 0.0D, 5.0D, 11.0D, 12.0D, 11.0D);;
+    public static final VoxelShape shape = Block.createCuboidShape(5.0D, 0.0D, 5.0D, 11.0D, 12.0D, 11.0D);
 
     public static final DirectionProperty FACING;
 

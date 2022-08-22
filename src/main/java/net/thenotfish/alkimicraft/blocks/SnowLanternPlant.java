@@ -15,11 +15,23 @@ import java.util.Random;
 
 public class SnowLanternPlant extends PlantBlock {
     public static final BooleanProperty LIT;
+    private Boolean alwaysLit = false;
     protected static final VoxelShape SHAPE = Block.createCuboidShape(5.0D, 0.0D, 5.0D, 11.0D, 10.0D, 11.0D);
 
     public SnowLanternPlant(Settings settings) {
         super(settings);
         this.setDefaultState(this.getDefaultState().with(Properties.LIT, false));
+    }
+
+    public SnowLanternPlant(Settings settings, Boolean alwaysLit) {
+        super(settings);
+        this.alwaysLit = true;
+        this.setDefaultState(this.getDefaultState().with(Properties.LIT, true));
+    }
+
+    @Override
+    public boolean hasRandomTicks(BlockState blockState) {
+        return !alwaysLit;
     }
 
     @Override

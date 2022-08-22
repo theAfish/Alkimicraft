@@ -70,6 +70,7 @@ public class BlockInit {
     public static Block IRON_ROOT_GRASS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "iron_root_grass"), new BlockIronRootGrass(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().sounds(BlockSoundGroup.CROP).nonOpaque()));
     public static Block FERTILE_BEANS = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "fertile_beans"), new FertileBeans(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().sounds(BlockSoundGroup.CROP).nonOpaque()));
     public static Block SNOW_LANTERN_PLANT = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "snow_lantern_plant"), new SnowLanternPlant(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().luminance(createLightLevelFromLitBlockState(6)).sounds(BlockSoundGroup.CROP).nonOpaque()));
+    public static Block FOREVER_BRIGHT_SNOW_LANTERN_PLANT = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID, "forever_bright_snow_lantern_plant"), new SnowLanternPlant(AbstractBlock.Settings.of(Material.PLANT).noCollision().luminance(createLightLevelFromLitBlockState(6)).sounds(BlockSoundGroup.CROP).nonOpaque(), true));
 
 
     public static Block DESERT_POPLAR_LEAVES = Registry.register(Registry.BLOCK, new Identifier(AlkimiCraft.MOD_ID,"desert_poplar_leaves"), createLeavesBlock(BlockSoundGroup.GRASS));

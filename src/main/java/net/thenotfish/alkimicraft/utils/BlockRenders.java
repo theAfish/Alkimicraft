@@ -15,6 +15,7 @@ public class BlockRenders {
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SNOW_LANTERN_PLANT, RenderLayer.getCutoutMipped());
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0xFFFFFF, BlockInit.SNOW_LANTERN_PLANT);
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.FOREVER_BRIGHT_SNOW_LANTERN_PLANT, RenderLayer.getCutoutMipped());
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.DESERT_POPLAR_SAPLING, RenderLayer.getCutoutMipped());
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0xFFFFFF, BlockInit.DESERT_POPLAR_SAPLING);

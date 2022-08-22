@@ -1,0 +1,16 @@
+{
+  "type": "alkimicraft:mixing_recipe",
+  "ingredients": [
+    {
+      "item": "alkimicraft:snow_lantern_plant"
+    },
+    {
+      "item": "minecraft:glowstone_dust"
+    }
+  ],
+  "level": 1,
+  "result": {
+    "item": "alkimicraft:forever_bright_snow_lantern_plant",
+    "count": 1
+  }
+}
